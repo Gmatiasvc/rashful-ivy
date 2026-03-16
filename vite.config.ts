@@ -9,7 +9,6 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
-      // 2. Definir que "@" apunta a la carpeta "src"
       "@": path.resolve(__dirname, "./src"),
     },
   },
