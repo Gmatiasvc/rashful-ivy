@@ -1,1 +1,9 @@
 @import "tailwindcss"; 
+
+@theme {
+	/* This automatically creates the 'font-poppins' utility */
+	--font-poppins: "Poppins", sans-serif;
+	
+	/* You can also override the default sans font here */
+	--font-sans: "Poppins", ui-sans-serif, system-ui;
+  }

@@ -1,0 +1,14 @@
+.heroSection {
+	background-image: url('hero.avif'); 
+    
+    height: 750px; 
+    width: 100%;
+
+    background-repeat: no-repeat;
+    
+    background-size: cover;
+    
+    background-position: center; 
+
+    background-color: #cccccc;
+};
