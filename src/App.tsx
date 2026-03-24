@@ -19,6 +19,7 @@ import {
 import Home from "@/page/Home";
 import Catering from "./page/Catering";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Empanadas from "./page/Empanadas";
 
 interface ComponentProps {
   t: TranslationKeys;
@@ -282,6 +283,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home t={t} />} />
         <Route path="/catering" element={<Catering t={t} />} />
+        <Route path="/empanadas" element={<Empanadas t={t} />} />
       </Routes>
       <WhatsAppButton t={t} />
       <Footer t={t} />

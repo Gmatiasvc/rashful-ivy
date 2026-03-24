@@ -176,6 +176,11 @@ const esTranslations = {
     "Servicio de menaje."
   ],
 
+  
+  // PAGE: Empanadas.tsx
+
+  emp_title_hero:"Empanadas",
+  emp_desc_hero:"El secreto de nuestras empanadas está en el amor que le ponemos al elavorarlo, con los toques justos de sal y sazón, estamos seguros que te gustarán y querrás repetir. Tenemos empanadas de carne y de pollo.",
 };
 
 export type TranslationKeys = typeof esTranslations;
