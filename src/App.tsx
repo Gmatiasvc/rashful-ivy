@@ -17,6 +17,8 @@ import {
 } from "@icons-pack/react-simple-icons";
 
 import Home from "@/page/Home";
+import Catering from "./page/Catering";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 interface ComponentProps {
   t: TranslationKeys;
@@ -92,8 +94,11 @@ const Navbar = ({ t, setLang, currentLang }: NavbarProps) => {
         <img src={logoLarge} className="max-h-full" alt="Logo" />
       </div>
 
-      <div className="">
+      <div className="flex flex-row gap-4">
         <NavbarItem text={t.nav_home} hrf="#hero" />
+        <NavbarItem text={t.nav_catering} hrf="/catering" />
+        <NavbarItem text={t.nav_foodTruck} hrf="#hero" />
+        <NavbarItem text={t.nav_empanadas} hrf="#hero" />
       </div>
 
       <div className="w-60 flex justify-end">
@@ -181,7 +186,7 @@ const Footer = ({ t }: ComponentProps) => {
 
           <div>
             <h4 className="text-white font-semibold mb-4 uppercase tracking-wider text-2xl">
-              {t.footer_}
+              {t.footer_contact}
             </h4>
             <ul className="space-y-2 text-xl">
               <li>
@@ -269,12 +274,18 @@ function App() {
   const t = translations[lang] || translations["es"];
 
   return (
-    <div>
+    <BrowserRouter>
+      {/* 2. Things outside of <Routes> stay on EVERY page (like Nav and Footer) */}
       <Navbar t={t} currentLang={lang} setLang={setLang} />
-      <Home t={t} />
+      
+      {/* 3. The Routes decide which page component to load */}
+      <Routes>
+        <Route path="/" element={<Home t={t} />} />
+        <Route path="/catering" element={<Catering t={t} />} />
+      </Routes>
       <WhatsAppButton t={t} />
       <Footer t={t} />
-    </div>
+    </BrowserRouter>
   );
 }
 

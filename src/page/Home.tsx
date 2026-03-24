@@ -163,7 +163,7 @@ function About({ t }: ComponentProps): JSX.Element {
 
 const Reserve = ({ t }: ComponentProps) => {
   return (
-    <section>
+    <section id="reserve">
       <div className="h-140  justify-around justify-items-center items-center grid grid-cols-1">
         <div className="w-96 justify-around  justify-items-center items-center grid">
           <div>
