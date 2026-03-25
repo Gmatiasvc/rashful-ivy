@@ -1,5 +1,4 @@
 export type Language = "es";
-3;
 
 const esTranslations = {
   nav_language: "🇪🇸 Español",
@@ -179,8 +178,30 @@ const esTranslations = {
   
   // PAGE: Empanadas.tsx
 
-  emp_title_hero:"Empanadas",
-  emp_desc_hero:"El secreto de nuestras empanadas está en el amor que le ponemos al elavorarlo, con los toques justos de sal y sazón, estamos seguros que te gustarán y querrás repetir. Tenemos empanadas de carne y de pollo.",
+  emp_title_hero: "Nuestras Empanadas",
+  emp_desc_hero: "El secreto de nuestras empanadas está en el amor y la auténtica receta peruana. Horneadas a la perfección con los toques justos de sazón.",
+
+  emp_menu_title: "Nuestra Variedad",
+  emp_menu_items: [
+    "Empanada de Carne: Jugosa carne de res picada a cuchillo con cebolla, huevo duro, pasas y aceitunas botija.",
+    "Empanada de Pollo: Suave pechuga de pollo deshilachada en un aderezo tradicional peruano con especias.",
+    "Empanada de Ají de Gallina: El clásico sabor del ají de gallina envuelto en nuestra crujiente masa horneada.",
+    "Empanada de Lomo Saltado: Trozos de lomo fino salteados al wok con cebolla, tomate y un toque de sillao.",
+    "Empanada Vegetariana: Deliciosa mezcla de vegetales frescos de temporada con queso andino derretido.",
+    "Empanada de Queso: Abundante queso derretido con un toque de orégano, simple pero exquisita."
+  ],
+
+  emp_prep_title: "Auténtica Preparación Peruana",
+  emp_prep_items: [
+    "Horneadas diariamente para garantizar su frescura y textura crujiente.",
+    "Masa tradicional casera con ese toque dulce característico de Perú.",
+    "Rellenos preparados con auténticos ajíes peruanos (amarillo y panca).",
+    "Polvoreadas con azúcar impalpable y acompañadas de limón (opcional)."
+  ],
+
+  emp_cta_title: "¿Antojo de Empanadas?",
+  emp_cta_desc: "Pídelas ahora para disfrutar en casa o solicítalas para tu próximo evento de Catering.",
+  emp_cta_button: "Pedir por WhatsApp",
 };
 
 export type TranslationKeys = typeof esTranslations;
