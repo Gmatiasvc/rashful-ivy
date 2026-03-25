@@ -119,7 +119,7 @@ const WhatsAppButton = ({ t }: ComponentProps) => {
     <a
       href={whatsappUrl}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       className="fixed bottom-8 right-8 z-50 bg-[#25D366] hover:bg-[#20bd5a] text-white p-4 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center group"
       aria-label="Contactar por WhatsApp"
     >
@@ -222,7 +222,7 @@ const Footer = ({ t }: ComponentProps) => {
               <a
                 href="https://www.instagram.com/inkacholafood/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="p-3 rounded-full bg-white text-black flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors"
               >
                 <SiInstagram size={25} />
@@ -230,7 +230,7 @@ const Footer = ({ t }: ComponentProps) => {
               <a
                 href="https://www.facebook.com/inkachola.food"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="p-3 rounded-full bg-white text-black flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors"
               >
                 <SiFacebook size={25} />
@@ -238,7 +238,7 @@ const Footer = ({ t }: ComponentProps) => {
               <a
                 href="https://www.tiktok.com/@inkacholafood"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="p-3 rounded-full bg-white text-black flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors"
               >
                 <SiTiktok size={20} />
@@ -246,7 +246,7 @@ const Footer = ({ t }: ComponentProps) => {
               <a
                 href="https://wa.me/41764493542"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="p-3 rounded-full bg-white text-black flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors"
               >
                 <SiWhatsapp size={20} />
@@ -257,8 +257,18 @@ const Footer = ({ t }: ComponentProps) => {
               <p>{t.footer_copy2}</p>
             </div>
             <div>
-              <a href="https://gmatiasvc.vercel.app">{t.footer_credits_gv}</a>
-              <a href="https://valentinapajares.vercel.app">
+              <a
+                href="https://gmatiasvc.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t.footer_credits_gv}
+              </a>
+              <a
+                href="https://valentinapajares.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {t.footer_credits_vp}
               </a>
             </div>
