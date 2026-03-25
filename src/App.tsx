@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 
 import logoLarge from "./assets/logo.avif";
 import footerBg from "./assets/footer.png";
@@ -16,10 +16,10 @@ import {
   SiWhatsapp,
 } from "@icons-pack/react-simple-icons";
 
-import Home from "@/page/Home";
-import Catering from "./page/Catering";
+const Home = lazy(() => import("@/page/Home"));
+const Catering = lazy(() => import("./page/Catering"));
+const Empanadas = lazy(() => import("./page/Empanadas"));
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Empanadas from "./page/Empanadas";
 
 interface ComponentProps {
   t: TranslationKeys;
@@ -290,11 +290,13 @@ function App() {
       <Navbar t={t} currentLang={lang} setLang={setLang} />
       
       {/* 3. The Routes decide which page component to load */}
-      <Routes>
-        <Route path="/" element={<Home t={t} />} />
-        <Route path="/catering" element={<Catering t={t} />} />
-        <Route path="/empanadas" element={<Empanadas t={t} />} />
-      </Routes>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<Home t={t} />} />
+          <Route path="/catering" element={<Catering t={t} />} />
+          <Route path="/empanadas" element={<Empanadas t={t} />} />
+        </Routes>
+      </Suspense>
       <WhatsAppButton t={t} />
       <Footer t={t} />
     </BrowserRouter>
