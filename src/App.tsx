@@ -98,8 +98,8 @@ const Navbar = ({ t, setLang, currentLang }: NavbarProps) => {
       <div className="flex flex-row gap-4">
         <NavbarItem text={t.nav_home} hrf="#hero" />
         <NavbarItem text={t.nav_catering} hrf="/catering" />
-        <NavbarItem text={t.nav_foodTruck} hrf="#hero" />
-        <NavbarItem text={t.nav_empanadas} hrf="#hero" />
+        <NavbarItem text={t.nav_foodTruck} hrf="/foodtruck" />
+        <NavbarItem text={t.nav_empanadas} hrf="/empanadas" />
       </div>
 
       <div className="w-60 flex justify-end">

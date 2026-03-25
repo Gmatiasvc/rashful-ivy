@@ -132,6 +132,7 @@ const Services = ({ t }: ComponentProps) => {
           img={iconFoodTruck}
           color="#a124ae"
           more={t.service_generic_more}
+          hrf="/foodtruck"
         />
         <ServiceCard
           title={t.service_empanadas_title}
@@ -188,11 +189,7 @@ const Reserve = ({ t }: ComponentProps) => {
           <div className="text-4xl font-bold text-center my-3">
             <h1>{t.reserve_title}</h1>
           </div>
-          <a
-            href="https://www.example.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://www.example.com">
             <div className="text-xl w-44 text-white bg-red-600 font-medium rounded-full py-2 text-center mt-7 hover:scale-110 transition-all">
               {t.reserve_button}
             </div>
@@ -293,7 +290,7 @@ const Location = ({ t }: ComponentProps) => {
           <a
             href="https://maps.app.goo.gl/u1tCwzV5Fx7YAwhk8"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noreferrer"
             className="inline-block bg-red-600 hover:bg-black text-white text-xl font-medium rounded-full py-3 px-8 transition-colors duration-200 text-center w-fit mx-auto md:mx-0 shadow-md hover:shadow-lg"
           >
             {t.address_button}

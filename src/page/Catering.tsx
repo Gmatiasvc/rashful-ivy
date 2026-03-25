@@ -5,7 +5,7 @@ import segundoSide from "@/assets/segundo.jpeg";
 import postresSide from "@/assets/postres.jpeg";
 import bebidaSide from "@/assets/bebida.jpeg";
 import Separator from "./Separator";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Utensils, Check } from "lucide-react";
 import { SiWhatsapp } from "@icons-pack/react-simple-icons";
 
 interface ComponentProps {
@@ -14,21 +14,44 @@ interface ComponentProps {
 
 const Hero = ({ t }: ComponentProps) => {
   return (
-    <div className="h-150 flex items-center justify-center">
-      <div className="text-center w-[65%]" style={{ color: "#11ad1c" }}>
-        <div className="text-7xl font-bold">{t.cat_hero_title}</div>
-        <div className="text-4xl pt-6 pb-10">{t.cat_hero_subtitle}</div>
-        <div className="text-xl text-black">{t.cat_hero_description}</div>
+    <div className="flex flex-col md:flex-row min-h-[600px] bg-gray-50">
+      <div className="w-full md:w-1/2 flex items-center justify-center p-12 lg:p-24 bg-red-600 text-white">
+        <div className="max-w-xl">
+          <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+            {t.cat_hero_title}
+          </h1>
+          <h2 className="text-3xl lg:text-4xl font-semibold mb-8 text-white/90">
+            {t.cat_hero_subtitle}
+          </h2>
+          <p className="text-xl leading-relaxed text-white/80">
+            {t.cat_hero_description}
+          </p>
+        </div>
+      </div>
+      <div className="w-full md:w-1/2 relative min-h-[400px]">
+        <img
+          src={entradaSide}
+          alt="Catering"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-red-600/20 to-transparent"></div>
       </div>
     </div>
   );
 };
 
 const Item = ({ item }: { item: string }) => {
-  return <div className="text-xl my-2">● {item}</div>;
+  return (
+    <div className="flex items-start gap-3 my-4 group">
+      <Utensils className="text-red-600 shrink-0 mt-1" size={20} />
+      <span className="text-xl text-gray-700 leading-relaxed group-hover:text-red-600 transition-colors">
+        {item}
+      </span>
+    </div>
+  );
 };
 
-const Block = ({
+const MenuCard = ({
   image,
   title,
   items,
@@ -38,13 +61,14 @@ const Block = ({
   items: string[];
 }) => {
   return (
-    <div className="w-175 min-h-120 flex">
-      <div className="w-1/3 h-full ">
-        <img src={image} alt="" className="object-cover h-full" />
+    <div className="bg-gray-50 rounded-3xl overflow-hidden shadow-lg hover:-translate-y-2 transition-transform duration-300 w-full max-w-3xl flex flex-col md:flex-row mx-auto border border-gray-100">
+      <div className="w-full md:w-5/12 h-64 md:h-auto relative">
+        <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover" />
       </div>
-      <div className="h-full w-2/3 text-center">
-        <h3 className="text-4xl font-medium m-3">{title}</h3>
-        <div className="text-left ml-7">
+      <div className="w-full md:w-7/12 p-8 lg:p-12 flex flex-col justify-center bg-white">
+        <h3 className="text-4xl font-bold text-gray-900 mb-6">{title}</h3>
+        <div className="w-16 h-1.5 bg-red-600 rounded-full mb-8"></div>
+        <div className="flex flex-col gap-2">
           {items.map((itemText, i) => (
             <Item key={i} item={itemText} />
           ))}
@@ -56,55 +80,78 @@ const Block = ({
 
 const Content = ({ t }: ComponentProps) => {
   return (
-    <div>
-      <div className="flex justify-around m-10">
-        <Block
-          image={segundoSide}
-          title={t.cat_cont_title_2}
-          items={t.cat_cont_items_1}
-        />
-        <Block
-          image={entradaSide}
-          title={t.cat_cont_title_1}
-          items={t.cat_cont_items_2}
-        />
+    <div className="py-24 px-4 bg-white">
+      <div className="max-w-7xl mx-auto flex flex-col gap-16">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-12">
+          <MenuCard
+            image={entradaSide}
+            title={t.cat_cont_title_1}
+            items={t.cat_cont_items_1}
+          />
+          <MenuCard
+            image={segundoSide}
+            title={t.cat_cont_title_2}
+            items={t.cat_cont_items_2}
+          />
+        </div>
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-12">
+          <MenuCard
+            image={postresSide}
+            title={t.cat_cont_title_3}
+            items={t.cat_cont_items_3}
+          />
+          <MenuCard
+            image={bebidaSide}
+            title={t.cat_cont_title_4}
+            items={t.cat_cont_items_4}
+          />
+        </div>
+        <div className="text-2xl text-center text-gray-600 font-medium mt-8 bg-gray-50 py-6 rounded-2xl max-w-3xl mx-auto w-full border border-gray-100">
+          {t.cat_important_msg}
+        </div>
       </div>
-      <div className="flex justify-around m-10">
-        <Block
-          image={postresSide}
-          title={t.cat_cont_title_3}
-          items={t.cat_cont_items_3}
-        />
-        <Block
-          image={bebidaSide}
-          title={t.cat_cont_title_4}
-          items={t.cat_cont_items_4}
-        />
+    </div>
+  );
+};
+
+const TosCard = ({ item }: { item: string }) => {
+  return (
+    <div className="border border-gray-100 bg-gray-50 rounded-2xl p-8 flex flex-col gap-4 hover:shadow-md transition-shadow">
+      <div className="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center shrink-0">
+        <Check className="text-red-600" size={24} />
       </div>
-      <div className="text-xl text-center m-5">{t.cat_important_msg}</div>
+      <p className="text-xl text-gray-700 leading-relaxed">{item}</p>
     </div>
   );
 };
 
 const Tos = ({ t }: ComponentProps) => {
+  const tosItems = [
+    t.cat_tos_item_1,
+    t.cat_tos_item_2,
+    t.cat_tos_item_3,
+    t.cat_tos_item_4,
+    t.cat_tos_item_5,
+    t.cat_tos_item_6,
+    t.cat_tos_item_7,
+    t.cat_tos_item_8,
+    t.cat_tos_item_9,
+    t.cat_tos_item_10,
+    t.cat_tos_item_11,
+  ];
+
   return (
-    <div className="m-16">
-      <div className="text-center mb-12">
-        <h1 className="text-5xl font-bold text-gray-900">{t.cat_tos_title}</h1>
-        <div className="w-24 h-1.5 bg-red-600 mx-auto mt-6 rounded-full"></div>
-      </div>
-      <div className=" w-10/12 mx-auto ">
-        <p className="text-2xl my-4">● {t.cat_tos_item_1}</p>
-        <p className="text-2xl my-4">● {t.cat_tos_item_2}</p>
-        <p className="text-2xl my-4">● {t.cat_tos_item_3}</p>
-        <p className="text-2xl my-4">● {t.cat_tos_item_4}</p>
-        <p className="text-2xl my-4">● {t.cat_tos_item_5}</p>
-        <p className="text-2xl my-4">● {t.cat_tos_item_6}</p>
-        <p className="text-2xl my-4">● {t.cat_tos_item_7}</p>
-        <p className="text-2xl my-4">● {t.cat_tos_item_8}</p>
-        <p className="text-2xl my-4">● {t.cat_tos_item_9}</p>
-        <p className="text-2xl my-4">● {t.cat_tos_item_10}</p>
-        <p className="text-2xl my-4">● {t.cat_tos_item_11}</p>
+    <div className="py-24 px-4 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">{t.cat_tos_title}</h1>
+          <div className="w-24 h-1.5 bg-red-600 mx-auto rounded-full"></div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {tosItems.map((item, index) => (
+            <TosCard key={index} item={item} />
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -112,7 +159,7 @@ const Tos = ({ t }: ComponentProps) => {
 
 const QuoteBanner = ({ t }: ComponentProps) => {
   return (
-    <div className="flex justify-center py-16 px-4 bg-gray-50">
+    <div className="flex justify-center py-24 px-4 bg-gray-50">
       <div className="w-full max-w-5xl rounded-3xl shadow-xl border border-gray-100 overflow-hidden flex flex-col md:flex-row">
         <div className="bg-red-600 text-white p-10 md:p-14 md:w-5/12 flex flex-col justify-center relative overflow-hidden">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight relative z-10">
@@ -152,7 +199,7 @@ const QuoteBanner = ({ t }: ComponentProps) => {
 
 function Catering({ t }: ComponentProps) {
   return (
-    <div>
+    <div className="bg-white">
       <Hero t={t} />
       <Content t={t} />
       <Separator />
