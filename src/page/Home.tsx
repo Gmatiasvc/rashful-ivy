@@ -10,6 +10,7 @@ import iconReserve from "@/assets/llamita_1.png";
 
 import { type TranslationKeys } from "@/data/translations";
 import { ArrowDown, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import Separator from "@/page/Separator";
 
@@ -75,7 +76,7 @@ const ServiceCard = ({
   img: string;
   color: string;
   more: string;
-  hrf: string;
+  hrf?: string;
 }) => {
   return (
     <div className="grid grid-cols-1 justify-items-center content-center gap-4 align-top pb-16">
@@ -88,14 +89,27 @@ const ServiceCard = ({
       <div className="text-xl w-64">
         <p className="text-center min-h-24">{desc} </p>
       </div>
-      <div
-        className="text-xl w-44 border-2 font-medium rounded-full py-2 flex"
-        style={{ color: color }}
-      >
-        <a href={hrf} className="text-center w-full">
-          {more}
-        </a>
-      </div>
+      {hrf && (
+        <div
+          className="text-xl w-44 border-2 font-medium rounded-full py-2 flex hover:scale-105 transition-transform"
+          style={{ color: color, borderColor: color }}
+        >
+          {hrf.startsWith("/") ? (
+            <Link to={hrf} className="text-center w-full">
+              {more}
+            </Link>
+          ) : (
+            <a
+              href={hrf}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-center w-full"
+            >
+              {more}
+            </a>
+          )}
+        </div>
+      )}
     </div>
   );
 };
