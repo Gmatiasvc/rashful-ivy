@@ -122,7 +122,7 @@ const QuoteBanner = ({ t }: ComponentProps) => {
           <a
             href={`https://wa.me/${t.footer_number?.replace(/[^0-9]/g, "")}`}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-white text-red-600 hover:bg-black hover:text-white transition-colors duration-300 font-bold text-lg py-4 px-8 rounded-full w-fit shadow-md relative z-10"
           >
             <SiWhatsapp size={22} />
