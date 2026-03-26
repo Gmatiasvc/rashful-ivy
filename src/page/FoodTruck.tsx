@@ -1,12 +1,12 @@
 import { useState, useEffect, type JSX } from "react";
-import { MapPin, Instagram, MessageCircle, Navigation } from "lucide-react";
+import { MapPin } from "lucide-react";
 
-import heroBg from "@/assets/hero.png";
-import aboutBg from "@/assets/about.png";
+import heroBg from "@/assets/foodTruck.avif";
 import iconFoodTruck from "@/assets/icono_truck.svg";
 
 import { type TranslationKeys } from "@/data/translations";
 import Separator from "@/page/Separator";
+import { SiInstagram, SiTiktok, SiWhatsapp } from "@icons-pack/react-simple-icons";
 
 interface ComponentProps {
   t: TranslationKeys;
@@ -30,7 +30,7 @@ function Hero({ t }: ComponentProps): JSX.Element {
     <section id="ft-hero">
       <div className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-gray-900">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
+          className="absolute inset-0 bg-cover bg-bottom bg-no-repeat opacity-40"
           style={{
             transform: `scale(${zoomScale})`,
             transformOrigin: "center center",
@@ -57,10 +57,6 @@ function Hero({ t }: ComponentProps): JSX.Element {
 function LocationSection({ t }: ComponentProps): JSX.Element {
   return (
     <section id="ft-location" className="relative py-32">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-10"
-        style={{ backgroundImage: `url(${aboutBg})` }}
-      />
       <div className="relative z-10 max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           <div className="bg-white rounded-3xl p-16 shadow-xl border border-gray-100 flex flex-col items-center text-center transform hover:-translate-y-2 transition-transform duration-300">
@@ -106,7 +102,7 @@ function CTASection({ t }: ComponentProps): JSX.Element {
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 bg-white text-red-600 px-8 py-4 rounded-full text-2xl font-bold hover:bg-gray-100 transition-colors duration-300 shadow-lg"
             >
-              <Instagram className="w-8 h-8" />
+              <SiInstagram className="w-8 h-8" />
               Instagram
             </a>
             <a
@@ -115,7 +111,7 @@ function CTASection({ t }: ComponentProps): JSX.Element {
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 bg-black text-white px-8 py-4 rounded-full text-2xl font-bold hover:bg-gray-900 transition-colors duration-300 shadow-lg"
             >
-              <Navigation className="w-8 h-8" />
+              <SiTiktok className="w-8 h-8" />
               TikTok
             </a>
           </div>
@@ -127,7 +123,7 @@ function CTASection({ t }: ComponentProps): JSX.Element {
               rel="noopener noreferrer"
               className="flex items-center gap-4 bg-purple-700 hover:bg-purple-800 text-white px-10 py-5 rounded-full text-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl border-2 border-purple-500"
             >
-              <MessageCircle className="w-8 h-8" />
+              <SiWhatsapp className="w-8 h-8" />
               {t.ft_contact_button}
             </a>
           </div>
@@ -143,7 +139,6 @@ export default function FoodTruck({ t }: ComponentProps): JSX.Element {
       <Hero t={t} />
       <Separator />
       <LocationSection t={t} />
-      <Separator />
       <CTASection t={t} />
     </div>
   );
