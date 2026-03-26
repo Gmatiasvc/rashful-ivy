@@ -117,7 +117,7 @@ const BottomCTA = ({ t }: ComponentProps) => {
           <a
             href={`https://wa.me/${t.footer_number?.replace(/[^0-9]/g, "")}`}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-white text-red-600 hover:bg-gray-900 hover:text-white transition-all duration-300 font-bold text-xl py-4 px-10 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1"
           >
             <SiWhatsapp size={26} />
