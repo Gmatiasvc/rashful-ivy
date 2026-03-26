@@ -2,9 +2,10 @@ import type { TranslationKeys } from "@/data/translations";
 
 import empanadaImg from "@/assets/empanada.avif";
 import empanadaSvg from "@/assets/empanada.svg";
-import entradaImg from "@/assets/entrada.jpeg";
-import { CheckCircle2, MessageCircle } from "lucide-react";
+import empanadaPreparacion from "@/assets/empanadaPreparacion.jpeg";
+import { CheckCircle2 } from "lucide-react";
 import Separator from "./Separator";
+import { SiWhatsapp } from "@icons-pack/react-simple-icons";
 
 interface ComponentProps {
   t: TranslationKeys;
@@ -70,15 +71,15 @@ const MenuGrid = ({ t }: ComponentProps) => {
 
 const PrepBlock = ({ t }: ComponentProps) => {
   return (
-    <div className="flex justify-center py-20 px-4 md:px-10 bg-gray-50">
+    <div className="flex justify-center py-20 px-4 md:px-10 h-200">
       <div className="w-full max-w-6xl bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden flex flex-col md:flex-row">
         <div className="md:w-1/2 h-80 md:h-auto relative">
           <img
-            src={entradaImg}
+            src={empanadaPreparacion}
             alt="Preparación"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-10"></div>
+          <div className="absolute inset-0 bg-black opacity-10"></div>
         </div>
         <div className="md:w-1/2 p-10 md:p-14 flex flex-col justify-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
@@ -119,7 +120,7 @@ const BottomCTA = ({ t }: ComponentProps) => {
             rel="noreferrer"
             className="inline-flex items-center gap-3 bg-white text-red-600 hover:bg-gray-900 hover:text-white transition-all duration-300 font-bold text-xl py-4 px-10 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1"
           >
-            <MessageCircle size={26} />
+            <SiWhatsapp size={26} />
             {t.emp_cta_button}
           </a>
         </div>
@@ -134,7 +135,7 @@ const BottomCTA = ({ t }: ComponentProps) => {
 
 function Empanadas({ t }: ComponentProps) {
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div>
       <Hero t={t} />
       <MenuGrid t={t} />
       <Separator />

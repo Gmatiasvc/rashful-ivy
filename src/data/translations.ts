@@ -192,8 +192,7 @@ const esTranslations = {
   emp_prep_items: [
     "Horneadas diariamente para garantizar su frescura y textura crujiente.",
     "Masa tradicional casera con ese toque dulce característico de Perú.",
-    "Rellenos preparados con auténticos ajíes peruanos (amarillo y panca).",
-    "Polvoreadas con azúcar impalpable y acompañadas de limón (opcional)."
+    "Rellenos preparados con auténticos ajíes peruanos.",
   ],
 
   emp_cta_title: "¿Antojo de Empanadas?",
