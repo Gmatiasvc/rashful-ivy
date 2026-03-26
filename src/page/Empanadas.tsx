@@ -13,9 +13,9 @@ interface ComponentProps {
 
 const Hero = ({ t }: ComponentProps) => {
   return (
-    <div className="h-96 flex flex-col md:flex-row items-center justify-center bg-gray-50 mt-20  overflow-hidden relative">
-      <div className="md:w-1/2 z-10 flex flex-col justify-center px-24">
-        <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 drop-shadow-sm">
+    <div className="h-auto min-h-[50vh] md:h-96 py-12 md:py-0 flex flex-col md:flex-row items-center justify-center bg-gray-50 mt-20 overflow-hidden relative">
+      <div className="md:w-1/2 z-10 flex flex-col justify-center px-8 md:px-24">
+        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 drop-shadow-sm">
           {t.emp_title_hero}
         </h1>
         <div className="w-24 h-2 bg-red-600 rounded-full mb-6"></div>
@@ -42,7 +42,7 @@ const MenuGrid = ({ t }: ComponentProps) => {
   return (
     <div className="py-20 px-6 md:px-10 bg-white">
       <div className="text-center mb-16 flex flex-col items-center">
-        <h2 className="text-5xl font-bold text-gray-900 mb-6 flex items-center justify-center gap-4">
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 flex items-center justify-center gap-4">
           <img src={empanadaSvg} alt="" className="h-12 w-12 text-red-600" />
           {t.emp_menu_title}
         </h2>
@@ -71,7 +71,7 @@ const MenuGrid = ({ t }: ComponentProps) => {
 
 const PrepBlock = ({ t }: ComponentProps) => {
   return (
-    <div className="flex justify-center py-20 px-4 md:px-10 h-200">
+    <div className="flex justify-center py-12 md:py-20 px-4 md:px-10 h-auto md:h-[800px]">
       <div className="w-full max-w-6xl bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden flex flex-col md:flex-row">
         <div className="md:w-1/2 h-80 md:h-auto relative">
           <img
@@ -82,7 +82,7 @@ const PrepBlock = ({ t }: ComponentProps) => {
           <div className="absolute inset-0 bg-black opacity-10"></div>
         </div>
         <div className="md:w-1/2 p-10 md:p-14 flex flex-col justify-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
             {t.emp_prep_title}
           </h2>
           <div className="w-16 h-1.5 bg-red-600 rounded-full mb-8"></div>
@@ -107,11 +107,11 @@ const PrepBlock = ({ t }: ComponentProps) => {
 
 const BottomCTA = ({ t }: ComponentProps) => {
   return (
-    <div className="py-24 px-6 flex justify-center bg-white">
-      <div className="max-w-4xl w-full bg-red-600 rounded-3xl shadow-2xl p-12 text-center text-white relative overflow-hidden">
+    <div className="py-24 px-6 flex justify-center bg-white overflow-hidden">
+      <div className="max-w-4xl w-full bg-red-600 rounded-3xl shadow-2xl p-8 md:p-12 text-center text-white relative overflow-hidden">
         <div className="relative z-10 flex flex-col items-center">
-          <h2 className="text-5xl font-bold mb-6">{t.emp_cta_title}</h2>
-          <p className="text-2xl mb-10 text-red-50 max-w-2xl leading-relaxed">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">{t.emp_cta_title}</h2>
+          <p className="text-xl md:text-2xl mb-10 text-red-50 max-w-2xl leading-relaxed">
             {t.emp_cta_desc}
           </p>
           <a
