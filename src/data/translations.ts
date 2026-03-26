@@ -198,6 +198,17 @@ const esTranslations = {
   emp_cta_title: "¿Antojo de Empanadas?",
   emp_cta_desc: "Pídelas ahora para disfrutar en casa o solicítalas para tu próximo evento de Catering.",
   emp_cta_button: "Pedir por WhatsApp",
+
+  // PAGE: FoodTruck.tsx
+  ft_hero_title: "Food Truck",
+  ft_hero_desc: "El food truck de INKA CHOLA está en dos ubicaciones; consulta nuestra ruta y disfruta de nuestras empanadas peruanas.",
+  ft_location_1_name: "WALSERPLATZ",
+  ft_location_1_status: "... en pausa",
+  ft_location_2_name: "ESPLANADE",
+  ft_location_2_status: "... en pausa",
+  ft_find_us_title: "Síguenos para encontrarnos",
+  ft_find_us_desc: "Sigue nuestras redes sociales (Instagram/TikTok) para conocer la ubicación actual de nuestro food truck.",
+  ft_contact_button: "Contacto para Eventos",
 };
 
 export type TranslationKeys = typeof esTranslations;

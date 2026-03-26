@@ -19,6 +19,7 @@ import {
 const Home = lazy(() => import("@/page/Home"));
 const Catering = lazy(() => import("./page/Catering"));
 const Empanadas = lazy(() => import("./page/Empanadas"));
+const FoodTruck = lazy(() => import("./page/FoodTruck"));
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 interface ComponentProps {
@@ -295,6 +296,7 @@ function App() {
           <Route path="/" element={<Home t={t} />} />
           <Route path="/catering" element={<Catering t={t} />} />
           <Route path="/empanadas" element={<Empanadas t={t} />} />
+          <Route path="/foodtruck" element={<FoodTruck t={t} />} />
         </Routes>
       </Suspense>
       <WhatsAppButton t={t} />
