@@ -167,7 +167,7 @@ const esTranslations = {
   cat_tos_item_11: "El presupuesto no incluye el servicio de camarero.",
 
   cat_quote_title: "Solicita un presupuesto",
-  cat_quote_button: "Contactar",
+  cat_quote_button: "Contáctanos",
   cat_quote_items: [
     "Reservaciones con dos semanas de anticipación.",
     "Dependiendo de los requerimientos se le dará un precio.",

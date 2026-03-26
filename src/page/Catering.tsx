@@ -14,8 +14,8 @@ interface ComponentProps {
 
 const Hero = ({ t }: ComponentProps) => {
   return (
-    <div className="flex flex-col md:flex-row min-h-[600px] bg-gray-50">
-      <div className="w-full md:w-1/2 flex items-center justify-center p-12 lg:p-24 bg-red-600 text-white">
+    <div className="flex flex-col md:flex-row  bg-gray-50 mt-24">
+      <div className="w-full md:w-1/2 flex items-center justify-center p-20  bg-red-600 text-white">
         <div className="max-w-xl">
           <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
             {t.cat_hero_title}
@@ -28,13 +28,13 @@ const Hero = ({ t }: ComponentProps) => {
           </p>
         </div>
       </div>
-      <div className="w-full md:w-1/2 relative min-h-[400px]">
+      <div className="w-full md:w-1/2 relative min-h-100">
         <img
           src={entradaSide}
           alt="Catering"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-red-600/20 to-transparent"></div>
+        <div className="absolute inset-0 bg-linear-to-r from-red-600/20 to-transparent"></div>
       </div>
     </div>
   );
@@ -42,7 +42,7 @@ const Hero = ({ t }: ComponentProps) => {
 
 const Item = ({ item }: { item: string }) => {
   return (
-    <div className="flex items-start gap-3 my-4 group">
+    <div className="flex items-start gap-3 my-3 group">
       <Utensils className="text-red-600 shrink-0 mt-1" size={20} />
       <span className="text-xl text-gray-700 leading-relaxed group-hover:text-red-600 transition-colors">
         {item}
@@ -63,9 +63,13 @@ const MenuCard = ({
   return (
     <div className="bg-gray-50 rounded-3xl overflow-hidden shadow-lg hover:-translate-y-2 transition-transform duration-300 w-full max-w-3xl flex flex-col md:flex-row mx-auto border border-gray-100">
       <div className="w-full md:w-5/12 h-64 md:h-auto relative">
-        <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover" />
+        <img
+          src={image}
+          alt={title}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
       </div>
-      <div className="w-full md:w-7/12 p-8 lg:p-12 flex flex-col justify-center bg-white">
+      <div className="w-full md:w-7/12 p-8 lg:p-12 flex flex-col  bg-white">
         <h3 className="text-4xl font-bold text-gray-900 mb-6">{title}</h3>
         <div className="w-16 h-1.5 bg-red-600 rounded-full mb-8"></div>
         <div className="flex flex-col gap-2">
@@ -81,7 +85,7 @@ const MenuCard = ({
 const Content = ({ t }: ComponentProps) => {
   return (
     <div className="py-24 px-4 bg-white">
-      <div className="max-w-7xl mx-auto flex flex-col gap-16">
+      <div className="max-w-8/10 mx-auto flex flex-col gap-16">
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-12">
           <MenuCard
             image={entradaSide}
@@ -144,7 +148,9 @@ const Tos = ({ t }: ComponentProps) => {
     <div className="py-24 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">{t.cat_tos_title}</h1>
+          <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            {t.cat_tos_title}
+          </h1>
           <div className="w-24 h-1.5 bg-red-600 mx-auto rounded-full"></div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
