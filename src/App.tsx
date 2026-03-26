@@ -290,7 +290,7 @@ function App() {
       <Navbar t={t} currentLang={lang} setLang={setLang} />
       
       {/* 3. The Routes decide which page component to load */}
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div className="h-500">Loading...</div>}>
         <Routes>
           <Route path="/" element={<Home t={t} />} />
           <Route path="/catering" element={<Catering t={t} />} />
