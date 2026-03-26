@@ -290,7 +290,7 @@ const Location = ({ t }: ComponentProps) => {
           <a
             href="https://maps.app.goo.gl/u1tCwzV5Fx7YAwhk8"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="inline-block bg-red-600 hover:bg-black text-white text-xl font-medium rounded-full py-3 px-8 transition-colors duration-200 text-center w-fit mx-auto md:mx-0 shadow-md hover:shadow-lg"
           >
             {t.address_button}
