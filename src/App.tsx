@@ -96,7 +96,7 @@ const Navbar = ({ t, setLang, currentLang }: NavbarProps) => {
       </div>
 
       <div className="flex flex-row gap-4">
-        <NavbarItem text={t.nav_home} hrf="#hero" />
+        <NavbarItem text={t.nav_home} hrf="/#hero" />
         <NavbarItem text={t.nav_catering} hrf="/catering" />
         <NavbarItem text={t.nav_foodTruck} hrf="/foodtruck" />
         <NavbarItem text={t.nav_empanadas} hrf="/empanadas" />
@@ -152,7 +152,7 @@ const Footer = ({ t }: ComponentProps) => {
             <ul className="space-y-2 text-xl">
               <li>
                 <a
-                  href="#hero"
+                  href="/#hero"
                   className="hover:text-red-600 transition-colors"
                 >
                   {t.footer_home}
@@ -160,7 +160,7 @@ const Footer = ({ t }: ComponentProps) => {
               </li>
               <li>
                 <a
-                  href="#services"
+                  href="/#services"
                   className="hover:text-red-600 transition-colors"
                 >
                   {t.footer_services}
@@ -168,7 +168,7 @@ const Footer = ({ t }: ComponentProps) => {
               </li>
               <li>
                 <a
-                  href="#about"
+                  href="/#about"
                   className="hover:text-red-600 transition-colors"
                 >
                   {t.footer_about}
@@ -176,7 +176,7 @@ const Footer = ({ t }: ComponentProps) => {
               </li>
               <li>
                 <a
-                  href="#reserve"
+                  href="/#reserve"
                   className="hover:text-red-600 transition-colors"
                 >
                   {t.footer_reserve}
