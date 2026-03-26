@@ -183,12 +183,9 @@ const esTranslations = {
 
   emp_menu_title: "Nuestra Variedad",
   emp_menu_items: [
-    "Empanada de Carne: Jugosa carne de res picada a cuchillo con cebolla, huevo duro, pasas y aceitunas botija.",
+    "Empanada de Carne: Jugosa carne de res picada a cuchillo con cebolla, huevo duro, pasas y aceitunas.",
     "Empanada de Pollo: Suave pechuga de pollo deshilachada en un aderezo tradicional peruano con especias.",
-    "Empanada de Ají de Gallina: El clásico sabor del ají de gallina envuelto en nuestra crujiente masa horneada.",
-    "Empanada de Lomo Saltado: Trozos de lomo fino salteados al wok con cebolla, tomate y un toque de sillao.",
-    "Empanada Vegetariana: Deliciosa mezcla de vegetales frescos de temporada con queso andino derretido.",
-    "Empanada de Queso: Abundante queso derretido con un toque de orégano, simple pero exquisita."
+    "Empanada Vegetariana: Deliciosa mezcla de vegetales frescos de temporada.",
   ],
 
   emp_prep_title: "Auténtica Preparación Peruana",

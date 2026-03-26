@@ -12,8 +12,8 @@ interface ComponentProps {
 
 const Hero = ({ t }: ComponentProps) => {
   return (
-    <div className="h-96 flex flex-col md:flex-row items-center justify-center bg-gray-50 mt-20 px-4 md:px-10 overflow-hidden relative">
-      <div className="md:w-1/2 z-10 flex flex-col justify-center px-10">
+    <div className="h-96 flex flex-col md:flex-row items-center justify-center bg-gray-50 mt-20  overflow-hidden relative">
+      <div className="md:w-1/2 z-10 flex flex-col justify-center px-24">
         <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 drop-shadow-sm">
           {t.emp_title_hero}
         </h1>
@@ -57,7 +57,7 @@ const MenuGrid = ({ t }: ComponentProps) => {
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl border border-gray-100 hover:scale-105 transition-all duration-300 flex flex-col h-full"
             >
               <h3 className="text-2xl font-bold text-red-600 mb-4">{title}</h3>
-              <p className="text-lg text-gray-700 leading-relaxed flex-grow">
+              <p className="text-lg text-gray-700 leading-relaxed grow">
                 {desc}
               </p>
             </div>
