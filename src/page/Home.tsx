@@ -34,7 +34,7 @@ function Hero({ t }: ComponentProps): JSX.Element {
 
   return (
     <section id="hero">
-      <div className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+      <div className="relative min-h-[50vh] md:h-screen w-full overflow-hidden flex items-center justify-center">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -45,17 +45,19 @@ function Hero({ t }: ComponentProps): JSX.Element {
           }}
         />
         <div className="relative z-10 text-center text-white p-8 ">
-          <h1 className="text-8xl font-bold w-4xl">{t.hero_title}</h1>
-          <h2 className="text-4xl font-bold pt-7">{t.hero_name}</h2>
-          <p className="text-2xl pt-5">{t.hero_desc}</p>
+          <h1 className="text-5xl md:text-8xl font-bold w-full max-w-4xl">
+            {t.hero_title}
+          </h1>
+          <h2 className="text-3xl md:text-4xl font-bold pt-7">{t.hero_name}</h2>
+          <p className="text-xl md:text-2xl pt-5">{t.hero_desc}</p>
 
           <div className="text-xl pt-16 flex justify-center">
-            <div className="bg-red-600 hover:bg-white hover:text-red-600 transition-colors duration-200 w-fit py-2 px-24 rounded-full border-2 border-white">
+            <div className="bg-red-600 hover:bg-white hover:text-red-600 transition-colors duration-200 w-full md:w-fit py-2 px-8 md:px-24 rounded-full border-2 border-white text-center">
               {t.hero_orderNow}
             </div>
           </div>
         </div>
-        <div className="absolute bottom-7 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-7 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
           <ArrowDown className="text-white w-12 h-12" />
         </div>
       </div>
@@ -117,7 +119,7 @@ const ServiceCard = ({
 const Services = ({ t }: ComponentProps) => {
   return (
     <section id="services">
-      <div className="h-150 flex justify-around items-center">
+      <div className="h-auto py-12 md:h-150 flex flex-col md:flex-row justify-around items-center gap-8">
         <ServiceCard
           title={t.service_catering_title}
           desc={t.service_catering_desc}
@@ -151,23 +153,25 @@ function About({ t }: ComponentProps): JSX.Element {
   return (
     <section id="about">
       <div
-        className="relative h-screen w-full bg-cover bg-center bg-no-repeat bg-fixed flex items-center justify-center"
+        className="relative min-h-[50vh] md:h-screen py-16 md:py-0 w-full bg-cover bg-center bg-no-repeat bg-fixed flex items-center justify-center"
         style={{ backgroundImage: `url(${aboutBg})` }}
       >
-        <div className=" pl-32 w-full text-white">
-          <div className="text-5xl font-bold ">
+        <div className="px-8 md:pl-32 w-full text-white">
+          <div className="text-3xl md:text-5xl font-bold ">
             <h1 className="py-2">{t.about_title1}</h1>
             <h1 className="py-2">{t.about_title2}</h1>
             <h1 className="py-2">{t.about_title3}</h1>
           </div>
           <div>
-            <h2 className="text-3xl pt-6">{t.about_subtitle}</h2>
+            <h2 className="text-xl md:text-3xl pt-6">{t.about_subtitle}</h2>
           </div>
           <div className="py-10">
             <img src={aboutSeparator} alt="" className="h-7" />
           </div>
           <div>
-            <p className="text-2xl w-[40%]">{t.about_desc}</p>
+            <p className="text-xl md:text-2xl w-full md:w-[40%]">
+              {t.about_desc}
+            </p>
           </div>
         </div>
       </div>
@@ -178,15 +182,15 @@ function About({ t }: ComponentProps): JSX.Element {
 const Reserve = ({ t }: ComponentProps) => {
   return (
     <section id="reserve">
-      <div className="h-140  justify-around justify-items-center items-center grid grid-cols-1">
-        <div className="w-96 justify-around  justify-items-center items-center grid">
+      <div className="h-auto py-16 md:h-140 justify-around justify-items-center items-center grid grid-cols-1">
+        <div className="w-full max-w-sm px-4 justify-around justify-items-center items-center grid">
           <div>
             <img src={iconReserve} alt="" className="h-52 mb-6" />
           </div>
-          <div className="text-2xl">
+          <div className="text-xl md:text-2xl">
             <h2>{t.reserve_subtitle}</h2>
           </div>
-          <div className="text-4xl font-bold text-center my-3">
+          <div className="text-3xl md:text-4xl font-bold text-center my-3">
             <h1>{t.reserve_title}</h1>
           </div>
           <a href="https://www.example.com">
@@ -199,10 +203,27 @@ const Reserve = ({ t }: ComponentProps) => {
     </section>
   );
 };
-const ScheduleRow = ({ day, hours }: { day: string; hours: string }) => (
+const ScheduleRow = ({
+  day,
+  hours1,
+  hours2,
+}: {
+  day: string;
+  hours1: string;
+  hours2: string;
+}) => (
   <tr className="border-b border-gray-100 last:border-none hover:bg-gray-50 transition-colors duration-200">
     <td className="py-5 px-8 font-semibold text-gray-900">{day}</td>
-    <td className="py-5 px-8 text-right text-gray-800">{hours}</td>
+    <td className="py-5 px-8 text-right text-gray-800">
+      {hours1}{" "}
+      {hours2 && (
+        <>
+          <br className="md:hidden" />
+          <span className="hidden md:inline"> | </span>
+          {hours2}
+        </>
+      )}
+    </td>
   </tr>
 );
 
@@ -210,50 +231,65 @@ const Attention = ({ t }: ComponentProps) => {
   return (
     <div className="flex flex-col items-center py-16 px-4">
       <div className="text-center mb-12">
-        <h1 className="text-5xl font-bold text-gray-900">{t.schedule_title}</h1>
+        <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
+          {t.schedule_title}
+        </h1>
         <div className="w-24 h-1.5 bg-red-600 mx-auto mt-6 rounded-full"></div>
       </div>
 
       <div className="w-full max-w-4xl overflow-hidden rounded-3xl shadow-lg border border-gray-100 bg-white">
-        <table className="w-full text-left border-collapse">
-          <thead className="bg-red-600 text-white text-3xl font-bold">
-            <tr>
-              <th className="py-6 px-8">{t.schedule_day}</th>
-              <th className="py-6 px-8 text-right">{t.schedule_hours}</th>
-            </tr>
-          </thead>
+        <div className="w-full overflow-x-auto">
+          <table className="w-full text-left border-collapse min-w-75">
+            <thead className="bg-red-600 text-white text-xl md:text-3xl font-bold">
+              <tr>
+                <th className="py-6 px-4 md:px-8 whitespace-nowrap">
+                  {t.schedule_day}
+                </th>
+                <th className="py-6 px-4 md:px-8 text-right whitespace-nowrap">
+                  {t.schedule_hours}
+                </th>
+              </tr>
+            </thead>
 
-          <tbody className="text-2xl">
-            <ScheduleRow
-              day={t.schedule_monday_text}
-              hours={t.schedule_monday_hours}
-            />
-            <ScheduleRow
-              day={t.schedule_tuesday_text}
-              hours={t.schedule_tuesday_hours}
-            />
-            <ScheduleRow
-              day={t.schedule_wednesday_text}
-              hours={t.schedule_wednesday_hours}
-            />
-            <ScheduleRow
-              day={t.schedule_thursday_text}
-              hours={t.schedule_thursday_hours}
-            />
-            <ScheduleRow
-              day={t.schedule_friday_text}
-              hours={t.schedule_friday_hours}
-            />
-            <ScheduleRow
-              day={t.schedule_saturday_text}
-              hours={t.schedule_saturday_hours}
-            />
-            <ScheduleRow
-              day={t.schedule_sunday_text}
-              hours={t.schedule_sunday_hours}
-            />
-          </tbody>
-        </table>
+            <tbody className="text-lg md:text-2xl">
+              <ScheduleRow
+                day={t.schedule_monday_text}
+                hours1={t.schedule_monday_hours_morning}
+                hours2={t.schedule_monday_hours_evening}
+              />
+              <ScheduleRow
+                day={t.schedule_tuesday_text}
+                hours1={t.schedule_tuesday_hours_morning}
+                hours2={t.schedule_tuesday_hours_evening}
+              />
+              <ScheduleRow
+                day={t.schedule_wednesday_text}
+                hours1={t.schedule_wednesday_hours_morning}
+                hours2={t.schedule_wednesday_hours_evening}
+              />
+              <ScheduleRow
+                day={t.schedule_thursday_text}
+                hours1={t.schedule_thursday_hours_morning}
+                hours2={t.schedule_thursday_hours_evening}
+              />
+              <ScheduleRow
+                day={t.schedule_friday_text}
+                hours1={t.schedule_friday_hours_morning}
+                hours2={t.schedule_friday_hours_evening}
+              />
+              <ScheduleRow
+                day={t.schedule_saturday_text}
+                hours1={t.schedule_saturday_hours_morning}
+                hours2={t.schedule_saturday_hours_evening}
+              />
+              <ScheduleRow
+                day={t.schedule_sunday_text}
+                hours1={t.schedule_sunday_hours_morning}
+                hours2={t.schedule_sunday_hours_evening}
+              />
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
@@ -263,7 +299,7 @@ const Location = ({ t }: ComponentProps) => {
   return (
     <div className="flex flex-col items-center pb-16 px-4">
       <div className="w-full max-w-4xl flex flex-col md:flex-row items-stretch gap-8 bg-white p-6 rounded-3xl shadow-lg border border-gray-100">
-        <div className="w-full md:w-1/2 min-h-62.5 bg-gray-100 rounded-2xl overflow-hidden relative flex items-center justify-center border border-gray-200">
+        <div className="w-full md:w-1/2 min-h-75 md:min-h-62.5 bg-gray-100 rounded-2xl overflow-hidden relative flex items-center justify-center border border-gray-200">
           <iframe
             className="absolute inset-0 w-full h-full"
             style={{ border: 0 }}
@@ -276,13 +312,13 @@ const Location = ({ t }: ComponentProps) => {
         </div>
 
         <div className="w-full md:w-1/2 flex flex-col justify-center py-4 text-center md:text-left">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             {t.address_title}
           </h2>
 
           <div className="w-16 h-1.5 bg-red-600 rounded-full mb-8 mx-auto md:mx-0"></div>
 
-          <div className="flex items-start justify-center md:justify-start gap-4 text-2xl text-gray-700 mb-10">
+          <div className="flex items-start justify-center md:justify-start gap-4 text-xl md:text-2xl text-gray-700 mb-10">
             <MapPin className="text-red-600 w-8 h-8 shrink-0 mt-1" />
             <p className="leading-relaxed">{t.address_address}</p>
           </div>

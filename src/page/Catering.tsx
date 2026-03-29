@@ -15,12 +15,12 @@ interface ComponentProps {
 const Hero = ({ t }: ComponentProps) => {
   return (
     <div className="flex flex-col md:flex-row  bg-gray-50 mt-24">
-      <div className="w-full md:w-1/2 flex items-center justify-center p-20  bg-red-600 text-white">
+      <div className="w-full md:w-1/2 flex items-center justify-center p-8 md:p-20  bg-red-600 text-white">
         <div className="max-w-xl">
-          <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
             {t.cat_hero_title}
           </h1>
-          <h2 className="text-3xl lg:text-4xl font-semibold mb-8 text-white/90">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-8 text-white/90">
             {t.cat_hero_subtitle}
           </h2>
           <p className="text-xl leading-relaxed text-white/80">
@@ -28,7 +28,7 @@ const Hero = ({ t }: ComponentProps) => {
           </p>
         </div>
       </div>
-      <div className="w-full md:w-1/2 relative min-h-100">
+      <div className="w-full md:w-1/2 relative min-h-[50vh] md:min-h-[400px]">
         <img
           src={entradaSide}
           alt="Catering"
@@ -70,7 +70,7 @@ const MenuCard = ({
         />
       </div>
       <div className="w-full md:w-7/12 p-8 lg:p-12 flex flex-col  bg-white">
-        <h3 className="text-4xl font-bold text-gray-900 mb-6">{title}</h3>
+        <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{title}</h3>
         <div className="w-16 h-1.5 bg-red-600 rounded-full mb-8"></div>
         <div className="flex flex-col gap-2">
           {items.map((itemText, i) => (
@@ -85,7 +85,7 @@ const MenuCard = ({
 const Content = ({ t }: ComponentProps) => {
   return (
     <div className="py-24 px-4 bg-white">
-      <div className="max-w-8/10 mx-auto flex flex-col gap-16">
+      <div className="w-full px-4 md:max-w-[80%] mx-auto flex flex-col gap-16">
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-12">
           <MenuCard
             image={entradaSide}
@@ -110,7 +110,7 @@ const Content = ({ t }: ComponentProps) => {
             items={t.cat_cont_items_4}
           />
         </div>
-        <div className="text-2xl text-center text-gray-600 font-medium mt-8 bg-gray-50 py-6 rounded-2xl max-w-3xl mx-auto w-full border border-gray-100">
+        <div className="text-xl md:text-2xl px-4 text-center text-gray-600 font-medium mt-8 bg-gray-50 py-6 rounded-2xl max-w-3xl mx-auto w-full border border-gray-100">
           {t.cat_important_msg}
         </div>
       </div>
@@ -148,7 +148,7 @@ const Tos = ({ t }: ComponentProps) => {
     <div className="py-24 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
             {t.cat_tos_title}
           </h1>
           <div className="w-24 h-1.5 bg-red-600 mx-auto rounded-full"></div>
@@ -168,7 +168,7 @@ const QuoteBanner = ({ t }: ComponentProps) => {
     <div className="flex justify-center py-24 px-4 bg-gray-50">
       <div className="w-full max-w-5xl rounded-3xl shadow-xl border border-gray-100 overflow-hidden flex flex-col md:flex-row">
         <div className="bg-red-600 text-white p-10 md:p-14 md:w-5/12 flex flex-col justify-center relative overflow-hidden">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight relative z-10">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight relative z-10">
             {t.cat_quote_title}
           </h2>
           <div className="w-16 h-1.5 bg-white/30 rounded-full mb-8 relative z-10"></div>
