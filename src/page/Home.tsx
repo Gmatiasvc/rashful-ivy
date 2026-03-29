@@ -45,7 +45,9 @@ function Hero({ t }: ComponentProps): JSX.Element {
           }}
         />
         <div className="relative z-10 text-center text-white p-8 ">
-          <h1 className="text-5xl md:text-8xl font-bold w-full max-w-4xl">{t.hero_title}</h1>
+          <h1 className="text-5xl md:text-8xl font-bold w-full max-w-4xl">
+            {t.hero_title}
+          </h1>
           <h2 className="text-3xl md:text-4xl font-bold pt-7">{t.hero_name}</h2>
           <p className="text-xl md:text-2xl pt-5">{t.hero_desc}</p>
 
@@ -167,7 +169,9 @@ function About({ t }: ComponentProps): JSX.Element {
             <img src={aboutSeparator} alt="" className="h-7" />
           </div>
           <div>
-            <p className="text-xl md:text-2xl w-full md:w-[40%]">{t.about_desc}</p>
+            <p className="text-xl md:text-2xl w-full md:w-[40%]">
+              {t.about_desc}
+            </p>
           </div>
         </div>
       </div>
@@ -199,10 +203,27 @@ const Reserve = ({ t }: ComponentProps) => {
     </section>
   );
 };
-const ScheduleRow = ({ day, hours }: { day: string; hours: string }) => (
+const ScheduleRow = ({
+  day,
+  hours1,
+  hours2,
+}: {
+  day: string;
+  hours1: string;
+  hours2: string;
+}) => (
   <tr className="border-b border-gray-100 last:border-none hover:bg-gray-50 transition-colors duration-200">
     <td className="py-5 px-8 font-semibold text-gray-900">{day}</td>
-    <td className="py-5 px-8 text-right text-gray-800">{hours}</td>
+    <td className="py-5 px-8 text-right text-gray-800">
+      {hours1}{" "}
+      {hours2 && (
+        <>
+          <br className="md:hidden" />
+          <span className="hidden md:inline"> | </span>
+          {hours2}
+        </>
+      )}
+    </td>
   </tr>
 );
 
@@ -210,7 +231,9 @@ const Attention = ({ t }: ComponentProps) => {
   return (
     <div className="flex flex-col items-center py-16 px-4">
       <div className="text-center mb-12">
-        <h1 className="text-3xl md:text-5xl font-bold text-gray-900">{t.schedule_title}</h1>
+        <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
+          {t.schedule_title}
+        </h1>
         <div className="w-24 h-1.5 bg-red-600 mx-auto mt-6 rounded-full"></div>
       </div>
 
@@ -219,39 +242,50 @@ const Attention = ({ t }: ComponentProps) => {
           <table className="w-full text-left border-collapse min-w-75">
             <thead className="bg-red-600 text-white text-xl md:text-3xl font-bold">
               <tr>
-                <th className="py-6 px-4 md:px-8 whitespace-nowrap">{t.schedule_day}</th>
-                <th className="py-6 px-4 md:px-8 text-right whitespace-nowrap">{t.schedule_hours}</th>
+                <th className="py-6 px-4 md:px-8 whitespace-nowrap">
+                  {t.schedule_day}
+                </th>
+                <th className="py-6 px-4 md:px-8 text-right whitespace-nowrap">
+                  {t.schedule_hours}
+                </th>
               </tr>
             </thead>
 
             <tbody className="text-lg md:text-2xl">
               <ScheduleRow
                 day={t.schedule_monday_text}
-                hours={t.schedule_monday_hours}
+                hours1={t.schedule_monday_hours_morning}
+                hours2={t.schedule_monday_hours_evening}
               />
               <ScheduleRow
                 day={t.schedule_tuesday_text}
-                hours={t.schedule_tuesday_hours}
+                hours1={t.schedule_tuesday_hours_morning}
+                hours2={t.schedule_tuesday_hours_evening}
               />
               <ScheduleRow
                 day={t.schedule_wednesday_text}
-                hours={t.schedule_wednesday_hours}
+                hours1={t.schedule_wednesday_hours_morning}
+                hours2={t.schedule_wednesday_hours_evening}
               />
               <ScheduleRow
                 day={t.schedule_thursday_text}
-                hours={t.schedule_thursday_hours}
+                hours1={t.schedule_thursday_hours_morning}
+                hours2={t.schedule_thursday_hours_evening}
               />
               <ScheduleRow
                 day={t.schedule_friday_text}
-                hours={t.schedule_friday_hours}
+                hours1={t.schedule_friday_hours_morning}
+                hours2={t.schedule_friday_hours_evening}
               />
               <ScheduleRow
                 day={t.schedule_saturday_text}
-                hours={t.schedule_saturday_hours}
+                hours1={t.schedule_saturday_hours_morning}
+                hours2={t.schedule_saturday_hours_evening}
               />
               <ScheduleRow
                 day={t.schedule_sunday_text}
-                hours={t.schedule_sunday_hours}
+                hours1={t.schedule_sunday_hours_morning}
+                hours2={t.schedule_sunday_hours_evening}
               />
             </tbody>
           </table>
