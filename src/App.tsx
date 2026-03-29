@@ -82,10 +82,20 @@ const LanguageSwitcher = ({ setLang, t }: NavbarProps) => {
   );
 };
 
-const NavbarItem = ({ text, hrf, onClick }: { text: string; hrf: string; onClick?: () => void }) => {
+const NavbarItem = ({
+  text,
+  hrf,
+  onClick,
+}: {
+  text: string;
+  hrf: string;
+  onClick?: () => void;
+}) => {
   return (
     <div className="text-xl hover:font-semibold hover:scale-105 transition-transform duration-200">
-      <a href={hrf} onClick={onClick} className="block w-full py-2">{text}</a>
+      <a href={hrf} onClick={onClick} className="block w-full py-2">
+        {text}
+      </a>
     </div>
   );
 };
@@ -102,9 +112,9 @@ const Navbar = ({ t, setLang, currentLang }: NavbarProps) => {
   };
 
   return (
-    <nav className="fixed top-0 h-24 flex justify-between items-center px-4 z-40 w-full bg-white shadow-sm">
-      <div className="w-48 md:w-60 h-24 flex items-center">
-        <img src={logoLarge} className="max-h-16 md:max-h-full" alt="Logo" />
+    <nav className="fixed top-0 h-16 md:h-24 flex justify-between items-center px-4 z-40 w-full bg-white shadow-sm">
+      <div className="w-60 flex md:justify-center">
+        <img src={logoLarge} className="max-h-11 md:max-h-20" alt="Logo" />
       </div>
 
       <div className="hidden md:flex flex-row gap-8">
@@ -119,19 +129,43 @@ const Navbar = ({ t, setLang, currentLang }: NavbarProps) => {
       </div>
 
       <div className="md:hidden flex items-center">
-        <button onClick={toggleMobileMenu} className="p-2" aria-label="Toggle menu">
+        <button
+          onClick={toggleMobileMenu}
+          className="p-2"
+          aria-label="Toggle menu"
+        >
           {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
         </button>
       </div>
 
       {isMobileMenuOpen && (
         <div className="absolute top-24 left-0 w-full bg-white shadow-xl flex flex-col p-6 gap-6 md:hidden border-t border-gray-100">
-          <NavbarItem text={t.nav_home} hrf="/#hero" onClick={closeMobileMenu} />
-          <NavbarItem text={t.nav_catering} hrf="/catering" onClick={closeMobileMenu} />
-          <NavbarItem text={t.nav_foodTruck} hrf="/foodtruck" onClick={closeMobileMenu} />
-          <NavbarItem text={t.nav_empanadas} hrf="/empanadas" onClick={closeMobileMenu} />
+          <NavbarItem
+            text={t.nav_home}
+            hrf="/#hero"
+            onClick={closeMobileMenu}
+          />
+          <NavbarItem
+            text={t.nav_catering}
+            hrf="/catering"
+            onClick={closeMobileMenu}
+          />
+          <NavbarItem
+            text={t.nav_foodTruck}
+            hrf="/foodtruck"
+            onClick={closeMobileMenu}
+          />
+          <NavbarItem
+            text={t.nav_empanadas}
+            hrf="/empanadas"
+            onClick={closeMobileMenu}
+          />
           <div className="mt-4 pt-4 border-t border-gray-200">
-            <LanguageSwitcher setLang={setLang} currentLang={currentLang} t={t} />
+            <LanguageSwitcher
+              setLang={setLang}
+              currentLang={currentLang}
+              t={t}
+            />
           </div>
         </div>
       )}
@@ -165,25 +199,25 @@ const Footer = ({ t }: ComponentProps) => {
   return (
     <footer className="text-gray-300 ">
       <div
-        className="h-auto md:h-100 w-full bg-cover bg-center pb-10 md:pb-0"
+        className="h-auto w-full bg-cover pb-10 md:pb-6 "
         style={{
           backgroundImage: `url(${footerBg})`,
         }}
       >
-        <div className="mx-4 md:mx-12 grid grid-cols-1 md:grid-cols-4 gap-8 pt-12 md:pt-44">
-          <div className="col-span-1 md:col-span-1 w-48 mx-auto md:ml-12 mb-8 md:mb-0">
+        <div className="mx-4 md:mx-12 grid grid-cols-1 md:grid-cols-4 gap-8 pt-44 ">
+          <div className="col-span-1 md:col-span-1 w-48 mx-auto md:ml-12 mb-8 md:mb-0 hidden md:block">
             <img src={logoWhite} alt="Logo" />
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4 uppercase tracking-wider text-2xl">
+            <h4 className="text-white font-semibold mb-2 md:mb-4 uppercase tracking-wider text-2xl">
               {t.footer_explore}
             </h4>
-            <ul className="space-y-2 text-xl">
+            <ul className="md:space-y-2 text-xl">
               <li>
                 <a
                   href="/#hero"
-                  className="hover:text-red-600 transition-colors block py-2 md:py-0"
+                  className="hover:text-red-600 transition-colors block py-1 md:py-0"
                 >
                   {t.footer_home}
                 </a>
@@ -191,7 +225,7 @@ const Footer = ({ t }: ComponentProps) => {
               <li>
                 <a
                   href="/#services"
-                  className="hover:text-red-600 transition-colors block py-2 md:py-0"
+                  className="hover:text-red-600 transition-colors block py-1 md:py-0"
                 >
                   {t.footer_services}
                 </a>
@@ -199,7 +233,7 @@ const Footer = ({ t }: ComponentProps) => {
               <li>
                 <a
                   href="/#about"
-                  className="hover:text-red-600 transition-colors block py-2 md:py-0"
+                  className="hover:text-red-600 transition-colors block py-1 md:py-0"
                 >
                   {t.footer_about}
                 </a>
@@ -207,7 +241,7 @@ const Footer = ({ t }: ComponentProps) => {
               <li>
                 <a
                   href="/#reserve"
-                  className="hover:text-red-600 transition-colors block py-2 md:py-0"
+                  className="hover:text-red-600 transition-colors block py-1 md:py-0"
                 >
                   {t.footer_reserve}
                 </a>
@@ -216,14 +250,14 @@ const Footer = ({ t }: ComponentProps) => {
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4 uppercase tracking-wider text-2xl">
+            <h4 className="text-white font-semibold mb-2 md:mb-4 uppercase tracking-wider text-2xl">
               {t.footer_contact}
             </h4>
-            <ul className="space-y-2 text-xl">
+            <ul className="md:space-y-2 text-xl">
               <li>
                 <a
                   href="tel:+41 76 449 35 42"
-                  className="hover:text-white transition-colors block py-2 md:py-0"
+                  className="hover:text-white transition-colors block py-0.5 md:py-0"
                 >
                   {t.footer_number}
                 </a>
@@ -231,7 +265,7 @@ const Footer = ({ t }: ComponentProps) => {
               <li>
                 <a
                   href="mailto:inkachola@gmx.ch"
-                  className="hover:text-white transition-colors block py-2 md:py-0"
+                  className="hover:text-white transition-colors block py-0.5 md:py-0"
                 >
                   {t.footer_email}
                 </a>
@@ -271,27 +305,19 @@ const Footer = ({ t }: ComponentProps) => {
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-white text-black flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors"
               >
-                <SiTiktok size={20} />
-              </a>
-              <a
-                href="https://wa.me/41764493542"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full bg-white text-black flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors"
-              >
-                <SiWhatsapp size={20} />
+                <SiTiktok size={25} />
               </a>
             </div>
-            <div className="text-xl py-3">
+            <div className="text-xl py-2 md:py-3">
               <p>{t.footer_copy1}</p>
               <p>{t.footer_copy2}</p>
             </div>
-            <div className="flex flex-col gap-2 mt-4">
+            <div className="flex flex-col  mt-2 md:mt-4">
               <a
                 href="https://gmatiasvc.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block py-1 hover:text-white transition-colors"
+                className="block  hover:text-white transition-colors"
               >
                 {t.footer_credits_gv}
               </a>
@@ -299,7 +325,7 @@ const Footer = ({ t }: ComponentProps) => {
                 href="https://valentinapajares.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block py-1 hover:text-white transition-colors"
+                className="block  hover:text-white transition-colors"
               >
                 {t.footer_credits_vp}
               </a>
@@ -320,15 +346,17 @@ function App() {
     <BrowserRouter>
       {/* 2. Things outside of <Routes> stay on EVERY page (like Nav and Footer) */}
       <Navbar t={t} currentLang={lang} setLang={setLang} />
-      
+
       {/* 3. The Routes decide which page component to load */}
       <Suspense fallback={<div className="h-500">Loading...</div>}>
-        <Routes>
-          <Route path="/" element={<Home t={t} />} />
-          <Route path="/catering" element={<Catering t={t} />} />
-          <Route path="/empanadas" element={<Empanadas t={t} />} />
-          <Route path="/foodtruck" element={<FoodTruck t={t} />} />
-        </Routes>
+        <div className="mt-16 md:mt-0">
+          <Routes>
+            <Route path="/" element={<Home t={t} />} />
+            <Route path="/catering" element={<Catering t={t} />} />
+            <Route path="/empanadas" element={<Empanadas t={t} />} />
+            <Route path="/foodtruck" element={<FoodTruck t={t} />} />
+          </Routes>
+        </div>
       </Suspense>
       <WhatsAppButton t={t} />
       <Footer t={t} />
