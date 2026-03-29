@@ -68,8 +68,8 @@ const LanguageSwitcher = ({ setLang, t }: NavbarProps) => {
       </button>
 
       {isOpen && (
-        <div className="absolute top-full mt-2 right-0 bg-gray-100 rounded-xl shadow-2xl border border-gray-400 min-w-37.5 z-50 overflow-hidden">
-          <div className="flex flex-col p-1">
+        <div className="absolute top-full mt-2 md:right-0 bg-gray-100 rounded-xl shadow-2xl border border-gray-400 min-w-37.5 z-50 overflow-hidden">
+          <div className="grid grid-cols-1 gap-2  p-1">
             <LangOption
               flag="🇪🇸"
               name="Español"
@@ -139,7 +139,7 @@ const Navbar = ({ t, setLang, currentLang }: NavbarProps) => {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="absolute top-24 left-0 w-full bg-white shadow-xl flex flex-col p-6 gap-6 md:hidden border-t border-gray-100">
+        <div className="absolute top-16 left-0 w-full bg-white shadow-xl flex flex-col p-6 gap-6 md:hidden border-t border-gray-100">
           <NavbarItem
             text={t.nav_home}
             hrf="/#hero"
@@ -160,7 +160,7 @@ const Navbar = ({ t, setLang, currentLang }: NavbarProps) => {
             hrf="/empanadas"
             onClick={closeMobileMenu}
           />
-          <div className="mt-4 pt-4 border-t border-gray-200">
+          <div className=" pt-4 border-t border-gray-200">
             <LanguageSwitcher
               setLang={setLang}
               currentLang={currentLang}

@@ -216,7 +216,7 @@ const Attention = ({ t }: ComponentProps) => {
 
       <div className="w-full max-w-4xl overflow-hidden rounded-3xl shadow-lg border border-gray-100 bg-white">
         <div className="w-full overflow-x-auto">
-          <table className="w-full text-left border-collapse min-w-[300px]">
+          <table className="w-full text-left border-collapse min-w-75">
             <thead className="bg-red-600 text-white text-xl md:text-3xl font-bold">
               <tr>
                 <th className="py-6 px-4 md:px-8 whitespace-nowrap">{t.schedule_day}</th>
@@ -265,7 +265,7 @@ const Location = ({ t }: ComponentProps) => {
   return (
     <div className="flex flex-col items-center pb-16 px-4">
       <div className="w-full max-w-4xl flex flex-col md:flex-row items-stretch gap-8 bg-white p-6 rounded-3xl shadow-lg border border-gray-100">
-        <div className="w-full md:w-1/2 min-h-[300px] md:min-h-62.5 bg-gray-100 rounded-2xl overflow-hidden relative flex items-center justify-center border border-gray-200">
+        <div className="w-full md:w-1/2 min-h-75 md:min-h-62.5 bg-gray-100 rounded-2xl overflow-hidden relative flex items-center justify-center border border-gray-200">
           <iframe
             className="absolute inset-0 w-full h-full"
             style={{ border: 0 }}
