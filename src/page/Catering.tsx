@@ -28,7 +28,7 @@ const Hero = ({ t }: ComponentProps) => {
           </p>
         </div>
       </div>
-      <div className="w-full md:w-1/2 relative min-h-[50vh] md:min-h-[400px]">
+      <div className="w-full md:w-1/2 relative min-h-[50vh] md:min-h-100">
         <img
           src={entradaSide}
           alt="Catering"

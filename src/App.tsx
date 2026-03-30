@@ -97,9 +97,24 @@ const LanguageSwitcher = ({ setLang, t }: NavbarProps) => {
               onClick={() => handleLangChange("es")}
             />
             <LangOption
-              flag="🇺🇸"
+              flag="🇬🇧"
               name="English"
               onClick={() => handleLangChange("en")}
+            />
+            <LangOption
+              flag="🇫🇷"
+              name="Français"
+              onClick={() => handleLangChange("fr")}
+            />
+            <LangOption
+              flag="🇩🇪"
+              name="Deutsch"
+              onClick={() => handleLangChange("de")}
+            />
+            <LangOption
+              flag="🇮🇹"
+              name="Italiano"
+              onClick={() => handleLangChange("it")}
             />
           </div>
         </div>

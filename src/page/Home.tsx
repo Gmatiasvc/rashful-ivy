@@ -177,7 +177,7 @@ function About({ t }: ComponentProps): JSX.Element {
             <img src={aboutSeparator} alt="" className="h-7" />
           </div>
           <div>
-            <p className="text-xl md:text-2xl w-full md:w-[40%]">
+            <p className="text-xl md:text-2xl w-full md:w-[40%] text-justify">
               {t.about_desc}
             </p>
           </div>
