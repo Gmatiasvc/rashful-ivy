@@ -62,6 +62,8 @@ const LanguageSwitcher = ({ setLang, t }: NavbarProps) => {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+        aria-haspopup="listbox"
         className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white text-black shadow-lg hover:scale-105 transition-transform duration-200 border border-gray-400"
       >
         <span className="text-lg">{t.nav_language}</span>
@@ -132,6 +134,7 @@ const Navbar = ({ t, setLang, currentLang }: NavbarProps) => {
         <button
           onClick={toggleMobileMenu}
           className="p-2"
+          aria-expanded={isMobileMenuOpen}
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
