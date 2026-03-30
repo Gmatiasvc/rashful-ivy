@@ -23,6 +23,16 @@ const Empanadas = lazy(() => import("./page/Empanadas"));
 const FoodTruck = lazy(() => import("./page/FoodTruck"));
 import { BrowserRouter, Route, Routes, Link, useLocation } from "react-router-dom";
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 // ScrollToHash component to handle hash scrolling on route change or initial load
 const ScrollToHash = () => {
   const { hash } = useLocation();
@@ -34,8 +44,6 @@ const ScrollToHash = () => {
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [hash]);
 
@@ -159,10 +167,10 @@ const Navbar = ({ t, setLang, currentLang }: NavbarProps) => {
       </div>
 
       <div className="hidden md:flex flex-row gap-8">
-        <NavbarItem text={t.nav_home} hrf="/#hero" />
-        <NavbarItem text={t.nav_catering} hrf="/catering#ct-hero" />
-        <NavbarItem text={t.nav_foodTruck} hrf="/foodtruck#ft-hero" />
-        <NavbarItem text={t.nav_empanadas} hrf="/empanadas#em-hero" />
+        <NavbarItem text={t.nav_home} hrf="/" />
+        <NavbarItem text={t.nav_catering} hrf="/catering" />
+        <NavbarItem text={t.nav_foodTruck} hrf="/foodtruck" />
+        <NavbarItem text={t.nav_empanadas} hrf="/empanadas" />
       </div>
 
       <div className="hidden md:flex w-60 justify-end">
@@ -184,7 +192,7 @@ const Navbar = ({ t, setLang, currentLang }: NavbarProps) => {
         <div className="absolute top-16 left-0 w-full bg-white shadow-xl flex flex-col p-6 gap-6 md:hidden border-t border-gray-100">
           <NavbarItem
             text={t.nav_home}
-            hrf="/#hero"
+            hrf="/"
             onClick={closeMobileMenu}
           />
           <NavbarItem
@@ -394,6 +402,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <ScrollToHash />
       {/* 2. Things outside of <Routes> stay on EVERY page (like Nav and Footer) */}
       <Navbar t={t} currentLang={lang} setLang={handleSetLang} />
