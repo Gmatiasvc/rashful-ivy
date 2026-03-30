@@ -14,29 +14,31 @@ interface ComponentProps {
 
 const Hero = ({ t }: ComponentProps) => {
   return (
-    <div className="flex flex-col md:flex-row  bg-gray-50 mt-24">
-      <div className="w-full md:w-1/2 flex items-center justify-center p-8 md:p-20  bg-red-600 text-white">
-        <div className="max-w-xl">
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-            {t.cat_hero_title}
-          </h1>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-8 text-white/90">
-            {t.cat_hero_subtitle}
-          </h2>
-          <p className="text-xl leading-relaxed text-white/80">
-            {t.cat_hero_description}
-          </p>
+    <section id="ct-hero">
+      <div className="flex flex-col md:flex-row  bg-gray-50 mt-24">
+        <div className="w-full md:w-1/2 flex items-center justify-center p-8 md:p-20  bg-red-600 text-white">
+          <div className="max-w-xl">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+              {t.cat_hero_title}
+            </h1>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-8 text-white/90">
+              {t.cat_hero_subtitle}
+            </h2>
+            <p className="text-xl leading-relaxed text-white/80">
+              {t.cat_hero_description}
+            </p>
+          </div>
+        </div>
+        <div className="w-full md:w-1/2 relative min-h-[50vh] md:min-h-100">
+          <img
+            src={entradaSide}
+            alt="Catering"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-linear-to-r from-red-600/20 to-transparent"></div>
         </div>
       </div>
-      <div className="w-full md:w-1/2 relative min-h-[50vh] md:min-h-100">
-        <img
-          src={entradaSide}
-          alt="Catering"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-linear-to-r from-red-600/20 to-transparent"></div>
-      </div>
-    </div>
+    </section>
   );
 };
 
@@ -70,7 +72,9 @@ const MenuCard = ({
         />
       </div>
       <div className="w-full md:w-7/12 p-8 lg:p-12 flex flex-col  bg-white">
-        <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{title}</h3>
+        <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          {title}
+        </h3>
         <div className="w-16 h-1.5 bg-red-600 rounded-full mb-8"></div>
         <div className="flex flex-col gap-2">
           {items.map((itemText, i) => (

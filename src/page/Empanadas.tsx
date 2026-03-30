@@ -13,28 +13,31 @@ interface ComponentProps {
 
 const Hero = ({ t }: ComponentProps) => {
   return (
-    <div className="h-auto min-h-[50vh] md:h-96 py-12 md:py-0 flex flex-col md:flex-row items-center justify-center bg-gray-50 mt-20 overflow-hidden relative">
-      <div className="md:w-1/2 z-10 flex flex-col justify-center px-8 md:px-24">
-        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 drop-shadow-sm">
-          {t.emp_title_hero}
-        </h1>
-        <div className="w-24 h-2 bg-red-600 rounded-full mb-6"></div>
-        <p className="text-xl text-gray-800 leading-relaxed max-w-xl">
-          {t.emp_desc_hero}
-        </p>
+    <section id="em-hero">
+      <div className="h-auto min-h-[50vh] md:h-96 py-12 md:py-0 flex flex-col md:flex-row items-center justify-center bg-gray-50 mt-20 overflow-hidden relative">
+        <div className="md:w-1/2 z-10 flex flex-col justify-center px-8 md:px-24">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 drop-shadow-sm">
+            {t.emp_title_hero}
+          </h1>
+          <div className="w-24 h-2 bg-red-600 rounded-full mb-6"></div>
+          <p className="text-xl text-gray-800 leading-relaxed max-w-xl">
+            {t.emp_desc_hero}
+          </p>
+        </div>
+        <div className="md:w-1/2 h-full absolute md:relative right-0 opacity-20 md:opacity-100 flex items-center justify-center">
+          <img
+            src={empanadaImg}
+            alt="Empanadas Peruanas"
+            className="object-cover h-full w-full max-h-96 mask-image-gradient md:mask-none"
+            style={{
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent, black 30%)",
+              maskImage: "linear-gradient(to right, transparent, black 30%)",
+            }}
+          />
+        </div>
       </div>
-      <div className="md:w-1/2 h-full absolute md:relative right-0 opacity-20 md:opacity-100 flex items-center justify-center">
-        <img
-          src={empanadaImg}
-          alt="Empanadas Peruanas"
-          className="object-cover h-full w-full max-h-96 mask-image-gradient md:mask-none"
-          style={{
-             WebkitMaskImage: "linear-gradient(to right, transparent, black 30%)",
-             maskImage: "linear-gradient(to right, transparent, black 30%)"
-          }}
-        />
-      </div>
-    </div>
+    </section>
   );
 };
 
@@ -71,7 +74,7 @@ const MenuGrid = ({ t }: ComponentProps) => {
 
 const PrepBlock = ({ t }: ComponentProps) => {
   return (
-    <div className="flex justify-center py-12 md:py-20 px-4 md:px-10 h-auto md:h-[800px]">
+    <div className="flex justify-center py-12 md:py-20 px-4 md:px-10 h-auto md:h-200">
       <div className="w-full max-w-6xl bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden flex flex-col md:flex-row">
         <div className="md:w-1/2 h-80 md:h-auto relative">
           <img
@@ -110,7 +113,9 @@ const BottomCTA = ({ t }: ComponentProps) => {
     <div className="py-24 px-6 flex justify-center bg-white overflow-hidden">
       <div className="max-w-4xl w-full bg-red-600 rounded-3xl shadow-2xl p-8 md:p-12 text-center text-white relative overflow-hidden">
         <div className="relative z-10 flex flex-col items-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">{t.emp_cta_title}</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            {t.emp_cta_title}
+          </h2>
           <p className="text-xl md:text-2xl mb-10 text-red-50 max-w-2xl leading-relaxed">
             {t.emp_cta_desc}
           </p>

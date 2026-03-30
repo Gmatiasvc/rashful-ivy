@@ -160,9 +160,9 @@ const Navbar = ({ t, setLang, currentLang }: NavbarProps) => {
 
       <div className="hidden md:flex flex-row gap-8">
         <NavbarItem text={t.nav_home} hrf="/#hero" />
-        <NavbarItem text={t.nav_catering} hrf="/catering" />
-        <NavbarItem text={t.nav_foodTruck} hrf="/foodtruck" />
-        <NavbarItem text={t.nav_empanadas} hrf="/empanadas" />
+        <NavbarItem text={t.nav_catering} hrf="/catering#ct-hero" />
+        <NavbarItem text={t.nav_foodTruck} hrf="/foodtruck#ft-hero" />
+        <NavbarItem text={t.nav_empanadas} hrf="/empanadas#em-hero" />
       </div>
 
       <div className="hidden md:flex w-60 justify-end">
