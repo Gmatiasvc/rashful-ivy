@@ -1,73 +1,42 @@
-# React + TypeScript + Vite
+# Peruvian Restaurant Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React 19 single-page application built with TypeScript, Vite, and Tailwind CSS 4. This repository houses the frontend codebase for the restaurant's main website, featuring sections for catering, food truck details, empanadas, and a central landing page.
 
-Currently, two official plugins are available:
+## Quick Start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The project relies strictly on **pnpm** for dependency management.
 
-## React Compiler
+```bash
+# Install dependencies
+pnpm install
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Start local development server
+pnpm run dev
 
-## Expanding the ESLint configuration
+# Lint codebase
+pnpm run lint
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Build for production
+pnpm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Documentation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Detailed information regarding the system's architecture, design patterns, and internal functionalities are located within the `/doc` directory.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **[Architecture & Execution](doc/architecture.md)**
+  Covers the overall application structure, folder layout (`src/`), performance considerations, and best practices.
+- **[Routing & Navigation](doc/routing.md)**
+  Explains the React Router 7 setup, lazy-loaded page components, and cross-route hash scrolling implementations.
+- **[Internationalization (i18n)](doc/i18n.md)**
+  Details the custom language context system relying on `translations.ts` and `localStorage` persistence.
+- **[Styling & Design](doc/styling.md)**
+  Outlines the usage of Tailwind CSS, mobile-first responsive design paradigms, accessibility (a11y) rules, and shared UI components.
+
+## Agent Directives
+
+> **Notice for Coding Agents**:
+> Any modifications, feature additions, or architectural shifts made to this project **must** be reflected in the relevant documentation.
+> - If you alter existing behavior, update the corresponding `.md` file in the `/doc` folder.
+> - If you introduce a new core system, create a new `.md` file in `/doc` and link to it from this `README.md`.
+> - Always maintain this documentation to ensure context is accurately preserved for future agents and developers.
