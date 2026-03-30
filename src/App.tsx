@@ -1,4 +1,4 @@
-import { useState, lazy, Suspense } from "react";
+import { useState, lazy, Suspense, useEffect } from "react";
 
 import logoLarge from "./assets/logo.avif";
 import footerBg from "./assets/footer.png";
@@ -21,7 +21,26 @@ const Home = lazy(() => import("@/page/Home"));
 const Catering = lazy(() => import("./page/Catering"));
 const Empanadas = lazy(() => import("./page/Empanadas"));
 const FoodTruck = lazy(() => import("./page/FoodTruck"));
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Link, useLocation } from "react-router-dom";
+
+// ScrollToHash component to handle hash scrolling on route change or initial load
+const ScrollToHash = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [hash]);
+
+  return null;
+};
 
 interface ComponentProps {
   t: TranslationKeys;
@@ -115,9 +134,9 @@ const NavbarItem = ({
 }) => {
   return (
     <div className="text-xl hover:font-semibold hover:scale-105 transition-transform duration-200">
-      <a href={hrf} onClick={onClick} className="block w-full py-2">
+      <Link to={hrf} onClick={onClick} className="block w-full py-2">
         {text}
-      </a>
+      </Link>
     </div>
   );
 };
@@ -238,36 +257,36 @@ const Footer = ({ t }: ComponentProps) => {
             </h4>
             <ul className="md:space-y-2 text-xl">
               <li>
-                <a
-                  href="/#hero"
+                <Link
+                  to="/#hero"
                   className="hover:text-red-600 transition-colors block py-1 md:py-0"
                 >
                   {t.footer_home}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/#services"
+                <Link
+                  to="/#services"
                   className="hover:text-red-600 transition-colors block py-1 md:py-0"
                 >
                   {t.footer_services}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/#about"
+                <Link
+                  to="/#about"
                   className="hover:text-red-600 transition-colors block py-1 md:py-0"
                 >
                   {t.footer_about}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/#reserve"
+                <Link
+                  to="/#reserve"
                   className="hover:text-red-600 transition-colors block py-1 md:py-0"
                 >
                   {t.footer_reserve}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -361,14 +380,23 @@ const Footer = ({ t }: ComponentProps) => {
 };
 
 function App() {
-  const [lang, setLang] = useState<Language>("es");
+  const [lang, setLang] = useState<Language>(() => {
+    const savedLang = localStorage.getItem("app_lang");
+    return (savedLang as Language) || "en";
+  });
 
-  const t = translations[lang] || translations["es"];
+  const handleSetLang = (newLang: Language) => {
+    setLang(newLang);
+    localStorage.setItem("app_lang", newLang);
+  };
+
+  const t = translations[lang] || translations["en"];
 
   return (
     <BrowserRouter>
+      <ScrollToHash />
       {/* 2. Things outside of <Routes> stay on EVERY page (like Nav and Footer) */}
-      <Navbar t={t} currentLang={lang} setLang={setLang} />
+      <Navbar t={t} currentLang={lang} setLang={handleSetLang} />
 
       {/* 3. The Routes decide which page component to load */}
       <Suspense fallback={<div className="h-500">Loading...</div>}>
