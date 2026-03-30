@@ -4,20 +4,20 @@ A React 19 single-page application built with TypeScript, Vite, and Tailwind CSS
 
 ## Quick Start
 
-The project relies strictly on **pnpm** for dependency management.
+The project relies strictly on **npm** for dependency management.
 
 ```bash
 # Install dependencies
-pnpm install
+npm install
 
 # Start local development server
-pnpm run dev
+npm run dev
 
 # Lint codebase
-pnpm run lint
+npm run lint
 
 # Build for production
-pnpm run build
+npm run build
 ```
 
 ## Documentation

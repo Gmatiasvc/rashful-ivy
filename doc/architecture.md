@@ -27,7 +27,7 @@ The project relies on a flat and categorized directory structure under `src/`:
 
 To ensure the application scales effectively and remains performant, adhere to the following principles:
 
-1. **Package Manager**: Use `pnpm` exclusively (e.g., `pnpm install`, `pnpm run build`, `pnpm run lint`). Avoid `npm` or `yarn`.
+1. **Package Manager**: Use `npm` exclusively (e.g., `npm install`, `npm run build`, `npm run lint`). Avoid `pnpm` or `yarn`.
 2. **React Key Optimization**: Do not use array indices as React `key` props. Always utilize stable identifiers (like object IDs or unique content) to help React optimize re-renders during list reconciliations.
 3. **Scroll Event Optimizations**: Any React state updates tied to scrolling must be wrapped within `window.requestAnimationFrame()` to limit updates to the browser's refresh rate. Add `{ passive: true }` to `scroll` event listeners to prevent blocking the main thread.
 4. **Link Management**: Avoid using standard `<a>` tags for internal links to preserve the SPA behavior. Utilize `<Link>` from `react-router-dom` instead.
