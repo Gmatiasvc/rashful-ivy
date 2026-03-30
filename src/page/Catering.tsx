@@ -15,7 +15,7 @@ interface ComponentProps {
 const Hero = ({ t }: ComponentProps) => {
   return (
     <section id="ct-hero">
-      <div className="flex flex-col md:flex-row  bg-gray-50 mt-24">
+      <div className="flex flex-col md:flex-row  bg-gray-50 mt-16">
         <div className="w-full md:w-1/2 flex items-center justify-center p-8 md:p-20  bg-red-600 text-white">
           <div className="max-w-xl">
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight">

@@ -13,8 +13,7 @@ interface ComponentProps {
 
 const Hero = ({ t }: ComponentProps) => {
   return (
-    <section id="em-hero">
-      <div className="h-auto min-h-[50vh] md:h-96 py-12 md:py-0 flex flex-col md:flex-row items-center justify-center bg-gray-50 mt-20 overflow-hidden relative">
+      <div className="h-auto min-h-[50vh] md:h-96 py-12 md:py-0 flex flex-col md:flex-row items-center justify-center bg-gray-50 mt-16 overflow-hidden relative">
         <div className="md:w-1/2 z-10 flex flex-col justify-center px-8 md:px-24">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 drop-shadow-sm">
             {t.emp_title_hero}
@@ -28,7 +27,7 @@ const Hero = ({ t }: ComponentProps) => {
           <img
             src={empanadaImg}
             alt="Empanadas Peruanas"
-            className="object-cover h-full w-full max-h-96 mask-image-gradient md:mask-none"
+            className="object-cover h-full w-full  mask-image-gradient md:mask-none"
             style={{
               WebkitMaskImage:
                 "linear-gradient(to right, transparent, black 30%)",
@@ -37,7 +36,6 @@ const Hero = ({ t }: ComponentProps) => {
           />
         </div>
       </div>
-    </section>
   );
 };
 
