@@ -16,11 +16,19 @@ function Hero({ t }: ComponentProps): JSX.Element {
   const [scrollY, setScrollY] = useState<number>(0);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = (): void => {
-      setScrollY(window.scrollY);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    // Use passive listener for better scroll performance and throttle state updates
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
