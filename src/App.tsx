@@ -70,7 +70,7 @@ const LangOption = ({
 }) => (
   <button
     onClick={onClick}
-    className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors text-left w-full"
+    className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-300 focus-visible:bg-gray-300 focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:outline-none transition-colors text-left w-full"
   >
     <span className="text-xl">{flag}</span>
     <span className="font-medium">{name}</span>
@@ -91,7 +91,7 @@ const LanguageSwitcher = ({ setLang, t }: NavbarProps) => {
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-haspopup="listbox"
-        className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white text-black shadow-lg hover:scale-105 transition-transform duration-200 border border-gray-400"
+        className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white text-black shadow-lg hover:scale-105 focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:outline-none transition-transform duration-200 border border-gray-400"
       >
         <span className="text-lg">{t.nav_language}</span>
       </button>
@@ -142,7 +142,7 @@ const NavbarItem = ({
 }) => {
   return (
     <div className="text-xl hover:font-semibold hover:scale-105 transition-transform duration-200">
-      <Link to={hrf} onClick={onClick} className="block w-full py-2">
+      <Link to={hrf} onClick={onClick} className="block w-full py-2 rounded-lg focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:outline-none">
         {text}
       </Link>
     </div>
@@ -180,7 +180,7 @@ const Navbar = ({ t, setLang, currentLang }: NavbarProps) => {
       <div className="md:hidden flex items-center">
         <button
           onClick={toggleMobileMenu}
-          className="p-2"
+          className="p-2 rounded-lg focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:outline-none"
           aria-expanded={isMobileMenuOpen}
           aria-label="Toggle menu"
         >
@@ -234,10 +234,10 @@ const WhatsAppButton = ({ t }: ComponentProps) => {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-8 right-8 z-50 bg-[#25D366] hover:bg-[#20bd5a] text-white p-4 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center group"
-      aria-label="Contactar por WhatsApp"
+      className="fixed bottom-8 right-8 z-50 bg-[#25D366] hover:bg-[#20bd5a] focus-visible:ring-4 focus-visible:ring-green-500 focus-visible:outline-none text-white p-4 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center group"
+      aria-label={t.whatsapp_text}
     >
-      <div className="text-gray-700 absolute -top-12 right-0 bg-white text-navy-900 text-xs font-bold py-2 px-4 rounded shadow-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none transform translate-y-2 group-hover:translate-y-0 duration-200">
+      <div className="text-gray-700 absolute -top-12 right-0 bg-white text-navy-900 text-xs font-bold py-2 px-4 rounded shadow-xl opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity whitespace-nowrap pointer-events-none transform translate-y-2 group-hover:translate-y-0 duration-200">
         {t.whatsapp_text}
       </div>
       <SiWhatsapp className="w-8 h-8 fill-current" />
