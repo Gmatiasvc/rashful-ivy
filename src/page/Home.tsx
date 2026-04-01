@@ -1,4 +1,4 @@
-import { useState, useEffect, type JSX } from "react";
+import { useEffect, useRef, type JSX } from "react";
 
 import heroBg from "@/assets/hero.png";
 import iconCatering from "@/assets/catering.png";
@@ -19,34 +19,36 @@ interface ComponentProps {
 }
 
 function Hero({ t }: ComponentProps): JSX.Element {
-  const [scrollY, setScrollY] = useState<number>(0);
+  const bgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let ticking = false;
     const handleScroll = (): void => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          setScrollY(window.scrollY);
+          if (bgRef.current) {
+            const zoomScale: number = 1 + window.scrollY / 2500;
+            bgRef.current.style.transform = `scale(${zoomScale})`;
+          }
           ticking = false;
         });
         ticking = true;
       }
     };
 
-    // Use passive listener for better scroll performance and throttle state updates
+    // Use passive listener for better scroll performance and direct DOM mutation
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const zoomScale: number = 1 + scrollY / 2500;
 
   return (
     <section id="hero">
       <div className="relative min-h-[50vh] md:h-screen w-full overflow-hidden flex items-center justify-center">
         <div
+          ref={bgRef}
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            transform: `scale(${zoomScale})`,
+            transform: `scale(1)`,
             transformOrigin: "center center",
             transition: "transform 0.1s ease-out",
             backgroundImage: `url(${heroBg})`,
