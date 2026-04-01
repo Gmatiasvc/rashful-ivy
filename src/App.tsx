@@ -337,7 +337,8 @@ const Footer = ({ t }: ComponentProps) => {
                 href="https://www.instagram.com/inkacholafood/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-white text-black flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors"
+                className="p-3 rounded-full bg-white text-black flex items-center justify-center hover:bg-red-600 hover:text-white focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none transition-colors"
+                aria-label="Instagram"
               >
                 <SiInstagram size={25} />
               </a>
@@ -345,7 +346,8 @@ const Footer = ({ t }: ComponentProps) => {
                 href="https://www.facebook.com/inkachola.food"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-white text-black flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors"
+                className="p-3 rounded-full bg-white text-black flex items-center justify-center hover:bg-red-600 hover:text-white focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none transition-colors"
+                aria-label="Facebook"
               >
                 <SiFacebook size={25} />
               </a>
@@ -353,7 +355,8 @@ const Footer = ({ t }: ComponentProps) => {
                 href="https://www.tiktok.com/@inkacholafood"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-white text-black flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors"
+                className="p-3 rounded-full bg-white text-black flex items-center justify-center hover:bg-red-600 hover:text-white focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none transition-colors"
+                aria-label="TikTok"
               >
                 <SiTiktok size={25} />
               </a>
