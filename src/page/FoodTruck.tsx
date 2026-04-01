@@ -1,4 +1,4 @@
-import { useState, useEffect, type JSX } from "react";
+import { useEffect, useRef, type JSX } from "react";
 import { MapPin } from "lucide-react";
 
 import heroBg from "@/assets/foodTruck.avif";
@@ -13,34 +13,36 @@ interface ComponentProps {
 }
 
 function Hero({ t }: ComponentProps): JSX.Element {
-  const [scrollY, setScrollY] = useState<number>(0);
+  const bgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let ticking = false;
     const handleScroll = (): void => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          setScrollY(window.scrollY);
+          if (bgRef.current) {
+            const zoomScale: number = 1 + window.scrollY / 2500;
+            bgRef.current.style.transform = `scale(${zoomScale})`;
+          }
           ticking = false;
         });
         ticking = true;
       }
     };
 
-    // Use passive listener for better scroll performance and throttle state updates
+    // Use passive listener for better scroll performance and direct DOM mutation
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const zoomScale: number = 1 + scrollY / 2500;
 
   return (
     <section id="ft-hero">
       <div className="relative min-h-[50vh] md:h-screen py-24 md:py-0 w-full overflow-hidden flex items-center justify-center bg-gray-900">
         <div
+          ref={bgRef}
           className="absolute inset-0 bg-cover bg-bottom bg-no-repeat opacity-40"
           style={{
-            transform: `scale(${zoomScale})`,
+            transform: `scale(1)`,
             transformOrigin: "center center",
             transition: "transform 0.1s ease-out",
             backgroundImage: `url(${heroBg})`,
