@@ -44,7 +44,8 @@ const MenuGrid = ({ t }: ComponentProps) => {
     <div className="py-20 px-6 md:px-10 bg-white">
       <div className="text-center mb-16 flex flex-col items-center">
         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 flex items-center justify-center gap-4">
-          <img src={empanadaSvg} alt="" className="h-12 w-12 text-red-600" />
+          {/* ⚡ Bolt: Defer offscreen image loading to improve LCP */}
+          <img src={empanadaSvg} alt="" className="h-12 w-12 text-red-600" loading="lazy" />
           {t.emp_menu_title}
         </h2>
         <div className="w-24 h-1.5 bg-red-600 rounded-full"></div>
@@ -75,10 +76,12 @@ const PrepBlock = ({ t }: ComponentProps) => {
     <div className="flex justify-center py-12 md:py-20 px-4 md:px-10 h-auto md:h-200">
       <div className="w-full max-w-6xl bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden flex flex-col md:flex-row">
         <div className="md:w-1/2 h-80 md:h-auto relative">
+          {/* ⚡ Bolt: Defer offscreen image loading to improve LCP */}
           <img
             src={empanadaPreparacion}
             alt="Preparación"
             className="w-full h-full object-cover"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-black opacity-10"></div>
         </div>
