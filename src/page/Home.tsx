@@ -62,9 +62,13 @@ function Hero({ t }: ComponentProps): JSX.Element {
           <p className="text-xl md:text-2xl pt-5">{t.hero_desc}</p>
 
           <div className="text-xl pt-16 flex justify-center">
-            <div className="bg-red-600 hover:bg-white hover:text-red-600 transition-colors duration-200 w-full md:w-fit py-2 px-8 md:px-24 rounded-full border-2 border-white text-center">
+            <button
+              type="button"
+              className="block bg-red-600 hover:bg-white hover:text-red-600 transition-colors duration-200 w-full md:w-fit py-2 px-8 md:px-24 rounded-full border-2 border-white text-center focus-visible:ring-4 focus-visible:ring-white focus-visible:outline-none"
+              onClick={() => document.getElementById('reserve')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               {t.hero_orderNow}
-            </div>
+            </button>
           </div>
         </div>
         <div className="absolute bottom-7 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
