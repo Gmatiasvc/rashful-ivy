@@ -97,7 +97,8 @@ const ServiceCard = ({
   return (
     <div className="grid grid-cols-1 justify-items-center content-center gap-4 align-top pb-16">
       <div>
-        <img src={img} alt="" className="h-28 w-28" />
+        {/* ⚡ Bolt: Defer offscreen image loading to improve LCP */}
+        <img src={img} alt="" className="h-28 w-28" loading="lazy" />
       </div>
       <div className="font-bold text-5xl py-2">
         <h2>{title}</h2>
@@ -180,7 +181,8 @@ function About({ t }: ComponentProps): JSX.Element {
             <h2 className="text-xl md:text-3xl pt-6">{t.about_subtitle}</h2>
           </div>
           <div className="py-10">
-            <img src={aboutSeparator} alt="" className="h-7" />
+            {/* ⚡ Bolt: Defer offscreen image loading to improve LCP */}
+            <img src={aboutSeparator} alt="" className="h-7" loading="lazy" />
           </div>
           <div>
             <p className="text-xl md:text-2xl w-full md:w-[40%] text-justify">
@@ -199,7 +201,8 @@ const Reserve = ({ t }: ComponentProps) => {
       <div className="h-auto py-16 md:h-140 justify-around justify-items-center items-center grid grid-cols-1">
         <div className="w-full max-w-sm px-4 justify-around justify-items-center items-center grid">
           <div>
-            <img src={iconReserve} alt="" className="h-52 mb-6" />
+            {/* ⚡ Bolt: Defer offscreen image loading to improve LCP */}
+            <img src={iconReserve} alt="" className="h-52 mb-6" loading="lazy" />
           </div>
           <div className="text-xl md:text-2xl">
             <h2>{t.reserve_subtitle}</h2>

@@ -65,10 +65,12 @@ const MenuCard = ({
   return (
     <div className="bg-gray-50 rounded-3xl overflow-hidden shadow-lg hover:-translate-y-2 transition-transform duration-300 w-full max-w-3xl flex flex-col md:flex-row mx-auto border border-gray-100">
       <div className="w-full md:w-5/12 h-64 md:h-auto relative">
+        {/* ⚡ Bolt: Defer offscreen image loading to improve LCP */}
         <img
           src={image}
           alt={title}
           className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
         />
       </div>
       <div className="w-full md:w-7/12 p-8 lg:p-12 flex flex-col  bg-white">

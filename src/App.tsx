@@ -256,7 +256,8 @@ const Footer = ({ t }: ComponentProps) => {
       >
         <div className="mx-4 md:mx-12 grid grid-cols-1 md:grid-cols-4 gap-8 pt-44 ">
           <div className="col-span-1 md:col-span-1 w-48 mx-auto md:ml-12 mb-8 md:mb-0 hidden md:block">
-            <img src={logoWhite} alt="Logo" />
+            {/* ⚡ Bolt: Defer offscreen image loading to improve LCP */}
+            <img src={logoWhite} alt="Logo" loading="lazy" />
           </div>
 
           <div>
