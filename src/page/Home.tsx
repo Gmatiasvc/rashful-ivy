@@ -323,6 +323,7 @@ const Location = ({ t }: ComponentProps) => {
             allowFullScreen={true}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            sandbox="allow-scripts allow-same-origin allow-popups"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2720.655447665243!2d7.244304476887553!3d47.1065199225725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e19293114d691%3A0x6b6e4e5e4a8f9c0!2sUntergasse%2028%2C%202502%20Biel!5e0!3m2!1sen!2sch!4v1710356400000!5m2!1sen!2sch"
             title="Google Maps Location"
           />
