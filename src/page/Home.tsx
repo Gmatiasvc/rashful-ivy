@@ -203,7 +203,7 @@ const Reserve = ({ t }: ComponentProps) => {
           <div className="text-3xl md:text-4xl font-bold text-center my-3">
             <h1>{t.reserve_title}</h1>
           </div>
-          <a href="https://www.example.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/41764493542?text=" target="_blank" rel="noopener noreferrer">
             <div className="text-xl w-44 text-white bg-red-600 font-medium rounded-full py-2 text-center mt-7 hover:scale-110 transition-all">
               {t.reserve_button}
             </div>
