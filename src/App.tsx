@@ -21,7 +21,7 @@ const Home = lazy(() => import("@/page/Home"));
 const Catering = lazy(() => import("./page/Catering"));
 const Empanadas = lazy(() => import("./page/Empanadas"));
 const FoodTruck = lazy(() => import("./page/FoodTruck"));
-import { BrowserRouter, Route, Routes, Link, useLocation } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Link, NavLink, useLocation } from "react-router-dom";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -141,10 +141,17 @@ const NavbarItem = ({
   onClick?: () => void;
 }) => {
   return (
-    <div className="text-xl hover:font-semibold hover:scale-105 transition-transform duration-200">
-      <Link to={hrf} onClick={onClick} className="block w-full py-2 rounded-lg focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:outline-none">
+    <div className="text-xl hover:scale-105 transition-transform duration-200">
+      <NavLink
+        to={hrf}
+        end={hrf === "/"}
+        onClick={onClick}
+        className={({ isActive }) =>
+          `block w-full py-2 rounded-lg focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:outline-none ${isActive ? "font-semibold text-red-600" : "hover:font-semibold"}`
+        }
+      >
         {text}
-      </Link>
+      </NavLink>
     </div>
   );
 };
