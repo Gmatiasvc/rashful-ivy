@@ -20,7 +20,8 @@ function Hero({ t }: ComponentProps): JSX.Element {
     const handleScroll = (): void => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          if (bgRef.current) {
+          // ⚡ Bolt: Only update DOM styles if the hero is visible in the viewport
+          if (bgRef.current && window.scrollY <= window.innerHeight) {
             const zoomScale: number = 1 + window.scrollY / 2500;
             bgRef.current.style.transform = `scale(${zoomScale})`;
           }
