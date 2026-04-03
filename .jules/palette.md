@@ -5,3 +5,7 @@
 ## 2025-02-14 - Semantic HTML and False Affordances
 **Learning:** Certain UI components, like the main Hero CTA button in Home, were implemented as `<div>` elements with visual hover effects (`hover:bg-white`). This creates a "false affordance" where it looks clickable to sighted users but lacks semantic meaning (like `<button>` or `<Link>`), missing functionality on click and completely hiding it from screen readers and keyboard navigation.
 **Action:** When inspecting visual buttons, ensure they are wrapped in an appropriate semantic tag (`<button>`, `<a>`, or `<Link>`), have interactivity mapped, and include explicit focus states for keyboard users (`focus-visible`).
+
+## 2025-04-03 - Add Active State with NavLink
+**Learning:** React Router's `NavLink` provides built-in accessibility (`aria-current="page"`) while naturally offering visual feedback via the `isActive` render prop. This avoids manual URL matching and greatly enhances navigation clarity, making it a powerful micro-UX accessibility win.
+**Action:** Use `NavLink` instead of `Link` for navigation menus to improve keyboard accessibility and visual hierarchy seamlessly.
