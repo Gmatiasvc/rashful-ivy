@@ -17,10 +17,15 @@ import {
 } from "@icons-pack/react-simple-icons";
 import { Menu, X } from "lucide-react";
 
-const Home = lazy(() => import("@/page/Home"));
-const Catering = lazy(() => import("./page/Catering"));
-const Empanadas = lazy(() => import("./page/Empanadas"));
-const FoodTruck = lazy(() => import("./page/FoodTruck"));
+const importHome = () => import("@/page/Home");
+const importCatering = () => import("./page/Catering");
+const importEmpanadas = () => import("./page/Empanadas");
+const importFoodTruck = () => import("./page/FoodTruck");
+
+const Home = lazy(importHome);
+const Catering = lazy(importCatering);
+const Empanadas = lazy(importEmpanadas);
+const FoodTruck = lazy(importFoodTruck);
 import { BrowserRouter, Route, Routes, Link, NavLink, useLocation } from "react-router-dom";
 
 const ScrollToTop = () => {
@@ -135,10 +140,12 @@ const NavbarItem = ({
   text,
   hrf,
   onClick,
+  onPrefetch,
 }: {
   text: string;
   hrf: string;
   onClick?: () => void;
+  onPrefetch?: () => void;
 }) => {
   return (
     <div className="text-xl hover:scale-105 transition-transform duration-200">
@@ -146,6 +153,8 @@ const NavbarItem = ({
         to={hrf}
         end={hrf === "/"}
         onClick={onClick}
+        onMouseEnter={onPrefetch}
+        onFocus={onPrefetch}
         className={({ isActive }) =>
           `block w-full py-2 rounded-lg focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:outline-none ${isActive ? "font-semibold text-red-600" : "hover:font-semibold"}`
         }
@@ -174,10 +183,10 @@ const Navbar = ({ t, setLang, currentLang }: NavbarProps) => {
       </div>
 
       <div className="hidden md:flex flex-row gap-8">
-        <NavbarItem text={t.nav_home} hrf="/" />
-        <NavbarItem text={t.nav_catering} hrf="/catering" />
-        <NavbarItem text={t.nav_foodTruck} hrf="/foodtruck" />
-        <NavbarItem text={t.nav_empanadas} hrf="/empanadas" />
+        <NavbarItem text={t.nav_home} hrf="/" onPrefetch={importHome} />
+        <NavbarItem text={t.nav_catering} hrf="/catering" onPrefetch={importCatering} />
+        <NavbarItem text={t.nav_foodTruck} hrf="/foodtruck" onPrefetch={importFoodTruck} />
+        <NavbarItem text={t.nav_empanadas} hrf="/empanadas" onPrefetch={importEmpanadas} />
       </div>
 
       <div className="hidden md:flex w-60 justify-end">
@@ -201,21 +210,25 @@ const Navbar = ({ t, setLang, currentLang }: NavbarProps) => {
             text={t.nav_home}
             hrf="/"
             onClick={closeMobileMenu}
+            onPrefetch={importHome}
           />
           <NavbarItem
             text={t.nav_catering}
             hrf="/catering"
             onClick={closeMobileMenu}
+            onPrefetch={importCatering}
           />
           <NavbarItem
             text={t.nav_foodTruck}
             hrf="/foodtruck"
             onClick={closeMobileMenu}
+            onPrefetch={importFoodTruck}
           />
           <NavbarItem
             text={t.nav_empanadas}
             hrf="/empanadas"
             onClick={closeMobileMenu}
+            onPrefetch={importEmpanadas}
           />
           <div className=" pt-4 border-t border-gray-200">
             <LanguageSwitcher
