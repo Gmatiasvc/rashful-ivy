@@ -44,7 +44,8 @@ const ScrollToHash = () => {
 
   useEffect(() => {
     if (hash) {
-      const id = hash.replace('#', '');
+      // 🛡️ Sentinel: Sanitize hash input to prevent DOM clobbering/injection vulnerabilities
+      const id = hash.replace('#', '').replace(/[^a-zA-Z0-9-_]/g, '');
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
@@ -414,7 +415,9 @@ const Footer = ({ t }: ComponentProps) => {
 function App() {
   const [lang, setLang] = useState<Language>(() => {
     const savedLang = localStorage.getItem("app_lang");
-    return (savedLang as Language) || "en";
+    // 🛡️ Sentinel: Validate localStorage input against allowlist to prevent type bypassing
+    const validLangs: Language[] = ["es", "en", "fr", "de", "it"];
+    return (validLangs.includes(savedLang as Language) ? (savedLang as Language) : "en");
   });
 
   const handleSetLang = (newLang: Language) => {

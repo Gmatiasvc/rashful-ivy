@@ -1,0 +1,4 @@
+## 2025-02-18 - Prevent DOM Clobbering in Document Selectors
+**Vulnerability:** Untrusted user input from the URL (`window.location.hash`) was being passed directly into `document.getElementById()` in the `ScrollToHash` component (`src/App.tsx`). Additionally, untrusted user data from `localStorage` was blindly cast to TypeScript types without verification.
+**Learning:** Raw hash strings and `localStorage` values bypass type safety and can be manipulated by malicious actors to perform DOM clobbering/injection or to break application state by introducing unexpected/unhandled types.
+**Prevention:** Always validate and sanitize untrusted input. For DOM APIs, use regex allowlists (`replace(/[^a-zA-Z0-9-_]/g, '')`) to filter characters before querying the DOM. For `localStorage`, validate the parsed string against an explicit array of allowed values (`["es", "en", "fr", "de", "it"].includes(value)`).
