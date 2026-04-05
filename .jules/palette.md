@@ -9,3 +9,7 @@
 ## 2025-04-03 - Add Active State with NavLink
 **Learning:** React Router's `NavLink` provides built-in accessibility (`aria-current="page"`) while naturally offering visual feedback via the `isActive` render prop. This avoids manual URL matching and greatly enhances navigation clarity, making it a powerful micro-UX accessibility win.
 **Action:** Use `NavLink` instead of `Link` for navigation menus to improve keyboard accessibility and visual hierarchy seamlessly.
+
+## 2024-05-24 - Accessible State-Driven Dropdowns
+**Learning:** Custom state-driven dropdown menus must explicitly handle closure events to be fully accessible. While an ARIA `aria-expanded` tag provides screen reader context, it doesn't provide keyboard users a way to exit the menu or pointer users an intuitive way to close it without clicking the toggle button again.
+**Action:** Always implement `Escape` key (`keydown`) and outside-click (`mousedown` outside a `useRef` boundary) closure mechanisms via `useEffect` for all custom dropdown, modal, or flyout components to ensure both keyboard and pointer accessibility.
