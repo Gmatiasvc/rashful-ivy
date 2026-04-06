@@ -13,3 +13,7 @@
 ## 2024-05-24 - Accessible State-Driven Dropdowns
 **Learning:** Custom state-driven dropdown menus must explicitly handle closure events to be fully accessible. While an ARIA `aria-expanded` tag provides screen reader context, it doesn't provide keyboard users a way to exit the menu or pointer users an intuitive way to close it without clicking the toggle button again.
 **Action:** Always implement `Escape` key (`keydown`) and outside-click (`mousedown` outside a `useRef` boundary) closure mechanisms via `useEffect` for all custom dropdown, modal, or flyout components to ensure both keyboard and pointer accessibility.
+
+## 2025-04-06 - Interactive Element Target Area & False Affordances
+**Learning:** Sometimes, hover/scale effects are incorrectly applied to a wrapper `div` while the semantic interactive element (`<Link>` or `<a>`) is placed inside it. This creates a disconnect where visual feedback happens for pointer devices, but keyboard navigation (which targets the inner element) fails to trigger the expected visual change or clear focus ring.
+**Action:** Always verify that interactive visual styles (hover, scale, transition) and their paired focus states (`focus-visible`) are placed directly onto the semantic interactive element (`<button>`, `<a>`, `<Link>`) itself, not on an outer wrapping `div`, so both pointer and keyboard users get the intended visual feedback.

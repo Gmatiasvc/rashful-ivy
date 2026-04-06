@@ -111,7 +111,7 @@ function CTASection({ t }: ComponentProps): JSX.Element {
               href="https://www.instagram.com/inkacholafood/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 bg-white text-red-600 px-8 py-4 rounded-full text-xl md:text-2xl font-bold hover:bg-gray-100 transition-colors duration-300 shadow-lg"
+              className="flex items-center justify-center gap-3 bg-white text-red-600 px-8 py-4 rounded-full text-xl md:text-2xl font-bold hover:bg-gray-100 focus-visible:ring-4 focus-visible:ring-white focus-visible:outline-none transition-colors duration-300 shadow-lg"
             >
               <SiInstagram className="w-6 h-6 md:w-8 md:h-8" />
               Instagram
@@ -120,7 +120,7 @@ function CTASection({ t }: ComponentProps): JSX.Element {
               href="https://www.tiktok.com/@inkacholafood"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 bg-black text-white px-8 py-4 rounded-full text-xl md:text-2xl font-bold hover:bg-gray-900 transition-colors duration-300 shadow-lg"
+              className="flex items-center justify-center gap-3 bg-black text-white px-8 py-4 rounded-full text-xl md:text-2xl font-bold hover:bg-gray-900 focus-visible:ring-4 focus-visible:ring-white focus-visible:outline-none transition-colors duration-300 shadow-lg"
             >
               <SiTiktok className="w-6 h-6 md:w-8 md:h-8" />
               TikTok
@@ -132,7 +132,7 @@ function CTASection({ t }: ComponentProps): JSX.Element {
               href="https://wa.me/41764493542"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-full sm:w-auto gap-4 bg-purple-700 hover:bg-purple-800 text-white px-8 py-5 rounded-full text-xl md:text-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl border-2 border-purple-500"
+              className="flex items-center justify-center w-full sm:w-auto gap-4 bg-purple-700 hover:bg-purple-800 focus-visible:ring-4 focus-visible:ring-white focus-visible:outline-none text-white px-8 py-5 rounded-full text-xl md:text-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl border-2 border-purple-500"
             >
               <SiWhatsapp className="w-6 h-6 md:w-8 md:h-8" />
               {t.ft_contact_button}
