@@ -11,3 +11,6 @@
 ## 2024-05-24 - [Prefetching Lazy-Loaded React Components]
 **Learning:** Attaching dynamic imports to `onMouseEnter` and `onFocus` events on navigation links significantly reduces perceived navigation latency. Instead of waiting for a user click to trigger the chunk download, the browser begins fetching the javascript chunks preemptively when the user signals intent.
 **Action:** When implementing code-splitting with `React.lazy()` for route components, always consider adding a prefetching mechanism on the associated navigation links (hover and focus states) to optimize the user experience.
+## 2024-05-24 - Avoid array indices as React keys
+**Learning:** Using array indices as React `key` props (e.g. `key={index}`) causes React's reconciliation engine to struggle when lists are mutated, often leading to full list re-renders or incorrect state application. Even static lists benefit from stable identifiers.
+**Action:** Always prefer stable identifiers like item content, unique string values, or IDs (e.g. `key={item}` or `key={item.id}`) in `.map()` callbacks instead of using the loop index.

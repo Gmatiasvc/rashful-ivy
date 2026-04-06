@@ -52,11 +52,11 @@ const MenuGrid = ({ t }: ComponentProps) => {
       </div>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {t.emp_menu_items.map((item, index) => {
+        {t.emp_menu_items.map((item) => {
           const [title, desc] = item.split(":");
           return (
             <div
-              key={index}
+              key={title || item}
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl border border-gray-100 hover:scale-105 transition-all duration-300 flex flex-col h-full"
             >
               <h3 className="text-2xl font-bold text-red-600 mb-4">{title}</h3>
@@ -91,8 +91,8 @@ const PrepBlock = ({ t }: ComponentProps) => {
           </h2>
           <div className="w-16 h-1.5 bg-red-600 rounded-full mb-8"></div>
           <ul className="space-y-6">
-            {t.emp_prep_items.map((item, index) => (
-              <li key={index} className="flex items-start gap-4 group">
+            {t.emp_prep_items.map((item) => (
+              <li key={item} className="flex items-start gap-4 group">
                 <CheckCircle2
                   className="text-red-600 shrink-0 mt-1 group-hover:scale-110 transition-transform duration-200"
                   size={28}

@@ -79,8 +79,8 @@ const MenuCard = ({
         </h3>
         <div className="w-16 h-1.5 bg-red-600 rounded-full mb-8"></div>
         <div className="flex flex-col gap-2">
-          {items.map((itemText, i) => (
-            <Item key={i} item={itemText} />
+          {items.map((itemText) => (
+            <Item key={itemText} item={itemText} />
           ))}
         </div>
       </div>
@@ -160,8 +160,8 @@ const Tos = ({ t }: ComponentProps) => {
           <div className="w-24 h-1.5 bg-red-600 mx-auto rounded-full"></div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {tosItems.map((item, index) => (
-            <TosCard key={index} item={item} />
+          {tosItems.map((item) => (
+            <TosCard key={item} item={item} />
           ))}
         </div>
       </div>
@@ -191,8 +191,8 @@ const QuoteBanner = ({ t }: ComponentProps) => {
         </div>
         <div className="p-10 md:p-14 md:w-7/12 flex flex-col justify-center bg-white">
           <ul className="space-y-6">
-            {t.cat_quote_items.map((item, index) => (
-              <li key={index} className="flex items-start gap-4 group">
+            {t.cat_quote_items.map((item) => (
+              <li key={item} className="flex items-start gap-4 group">
                 <CheckCircle2
                   className="text-red-600 shrink-0 mt-1 group-hover:scale-110 transition-transform duration-200"
                   size={26}
