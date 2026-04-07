@@ -108,12 +108,13 @@ const ServiceCard = ({
         <p className="text-center min-h-24">{desc} </p>
       </div>
       {hrf && (
-        <div
-          className="text-xl w-44 border-2 font-medium rounded-full py-2 flex hover:scale-105 transition-transform"
-          style={{ color: color, borderColor: color }}
-        >
+        <div className="flex">
           {hrf.startsWith("/") ? (
-            <Link to={hrf} className="text-center w-full">
+            <Link
+              to={hrf}
+              className="block text-xl w-44 border-2 font-medium rounded-full py-2 text-center hover:scale-105 focus-visible:scale-105 focus-visible:ring-4 focus-visible:outline-none transition-transform"
+              style={{ color: color, borderColor: color }}
+            >
               {more}
             </Link>
           ) : (
@@ -121,7 +122,8 @@ const ServiceCard = ({
               href={hrf}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-center w-full"
+              className="block text-xl w-44 border-2 font-medium rounded-full py-2 text-center hover:scale-105 focus-visible:scale-105 focus-visible:ring-4 focus-visible:outline-none transition-transform"
+              style={{ color: color, borderColor: color }}
             >
               {more}
             </a>
@@ -211,10 +213,13 @@ const Reserve = ({ t }: ComponentProps) => {
           <div className="text-3xl md:text-4xl font-bold text-center my-3">
             <h1>{t.reserve_title}</h1>
           </div>
-          <a href="https://wa.me/41764493542?text=" target="_blank" rel="noopener noreferrer">
-            <div className="text-xl w-44 text-white bg-red-600 font-medium rounded-full py-2 text-center mt-7 hover:scale-110 transition-all">
-              {t.reserve_button}
-            </div>
+          <a
+            href="https://wa.me/41764493542?text="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block text-xl w-44 text-white bg-red-600 font-medium rounded-full py-2 text-center mt-7 hover:scale-110 focus-visible:scale-110 focus-visible:ring-4 focus-visible:ring-red-600 focus-visible:outline-none transition-all"
+          >
+            {t.reserve_button}
           </a>
         </div>
       </div>
@@ -346,7 +351,7 @@ const Location = ({ t }: ComponentProps) => {
             href="https://maps.app.goo.gl/u1tCwzV5Fx7YAwhk8"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-red-600 hover:bg-black text-white text-xl font-medium rounded-full py-3 px-8 transition-colors duration-200 text-center w-fit mx-auto md:mx-0 shadow-md hover:shadow-lg"
+            className="inline-block bg-red-600 hover:bg-black text-white text-xl font-medium rounded-full py-3 px-8 transition-colors duration-200 text-center w-fit mx-auto md:mx-0 shadow-md hover:shadow-lg focus-visible:ring-4 focus-visible:ring-red-600 focus-visible:outline-none"
           >
             {t.address_button}
           </a>

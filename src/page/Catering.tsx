@@ -182,7 +182,7 @@ const QuoteBanner = ({ t }: ComponentProps) => {
             href={`https://wa.me/${t.footer_number?.replace(/[^0-9]/g, "")}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-white text-red-600 hover:bg-black hover:text-white transition-colors duration-300 font-bold text-lg py-4 px-8 rounded-full w-fit shadow-md relative z-10"
+            className="inline-flex items-center gap-3 bg-white text-red-600 hover:bg-black hover:text-white focus-visible:ring-4 focus-visible:ring-white focus-visible:outline-none transition-colors duration-300 font-bold text-lg py-4 px-8 rounded-full w-fit shadow-md relative z-10"
           >
             <SiWhatsapp size={22} />
             {t.cat_quote_button}
