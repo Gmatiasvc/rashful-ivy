@@ -108,7 +108,7 @@ function CTASection({ t }: ComponentProps): JSX.Element {
 
           <div className="flex flex-col sm:flex-row gap-6 mb-16 w-full sm:w-auto">
             <a
-              href="https://www.instagram.com/inkacholafood/"
+              href="https://www.instagram.com/rashfulivyfood/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 bg-white text-red-600 px-8 py-4 rounded-full text-xl md:text-2xl font-bold hover:bg-gray-100 focus-visible:ring-4 focus-visible:ring-white focus-visible:outline-none transition-colors duration-300 shadow-lg"
@@ -117,7 +117,7 @@ function CTASection({ t }: ComponentProps): JSX.Element {
               Instagram
             </a>
             <a
-              href="https://www.tiktok.com/@inkacholafood"
+              href="https://www.tiktok.com/@rashfulivyfood"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 bg-black text-white px-8 py-4 rounded-full text-xl md:text-2xl font-bold hover:bg-gray-900 focus-visible:ring-4 focus-visible:ring-white focus-visible:outline-none transition-colors duration-300 shadow-lg"

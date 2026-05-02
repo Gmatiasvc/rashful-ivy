@@ -4,7 +4,7 @@ This document covers how routing and navigation are managed within the applicati
 
 ## Overview
 
-The application utilizes **React Router 7** with `BrowserRouter` for frontend navigation. The main layout and routing configuration are defined centrally in `src/App.tsx`.
+The application utilizes **React Router 7** with `BrowserRouter` for frontend navigation, supporting the overarching goal of online delivery and reservations. The main layout and routing configuration are defined centrally in `src/App.tsx`.
 
 ## Route Definitions
 

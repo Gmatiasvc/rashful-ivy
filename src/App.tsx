@@ -363,7 +363,7 @@ const Footer = ({ t }: ComponentProps) => {
               </li>
               <li>
                 <a
-                  href="mailto:inkachola@gmx.ch"
+                  href="mailto:rashfulivy@gmx.ch"
                   className="hover:text-white transition-colors block py-0.5 md:py-0"
                 >
                   {t.footer_email}
@@ -383,7 +383,7 @@ const Footer = ({ t }: ComponentProps) => {
             </h4>
             <div className="flex gap-4 mb-4">
               <a
-                href="https://www.instagram.com/inkacholafood/"
+                href="https://www.instagram.com/rashfulivyfood/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-white text-black flex items-center justify-center hover:bg-red-600 hover:text-white focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none transition-colors"
@@ -392,7 +392,7 @@ const Footer = ({ t }: ComponentProps) => {
                 <SiInstagram size={25} />
               </a>
               <a
-                href="https://www.facebook.com/inkachola.food"
+                href="https://www.facebook.com/rashfulivy.food"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-white text-black flex items-center justify-center hover:bg-red-600 hover:text-white focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none transition-colors"
@@ -401,7 +401,7 @@ const Footer = ({ t }: ComponentProps) => {
                 <SiFacebook size={25} />
               </a>
               <a
-                href="https://www.tiktok.com/@inkacholafood"
+                href="https://www.tiktok.com/@rashfulivyfood"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-white text-black flex items-center justify-center hover:bg-red-600 hover:text-white focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none transition-colors"
