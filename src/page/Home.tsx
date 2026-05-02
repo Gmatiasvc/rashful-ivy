@@ -144,7 +144,7 @@ const Services = ({ t }: ComponentProps) => {
           img={iconCatering}
           color="#11ad1c"
           more={t.service_generic_more}
-          hrf="/catering"
+          hrf="/delivery"
         />
         <ServiceCard
           title={t.service_foodTruck_title}

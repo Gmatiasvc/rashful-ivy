@@ -6,7 +6,7 @@ const esTranslations = {
   //PAGE: Home.tsx
 
   nav_home: "Nosotros",
-  nav_catering: "Catering",
+  nav_catering: "Delivery",
   nav_foodTruck: "Food Truck",
   nav_empanadas: "Empanadas",
   nav_contacto: "Contacto",
@@ -226,7 +226,7 @@ const enTranslations: TranslationKeys = {
   //PAGE: Home.tsx
 
   nav_home: "About Us",
-  nav_catering: "Catering",
+  nav_catering: "Delivery",
   nav_foodTruck: "Food Truck",
   nav_empanadas: "Empanadas",
   nav_contacto: "Contact",
@@ -442,7 +442,7 @@ const frTranslations: TranslationKeys = {
 
   //PAGE: Home.tsx
   nav_home: "À propos",
-  nav_catering: "Traiteur",
+  nav_catering: "Delivery",
   nav_foodTruck: "Food Truck",
   nav_empanadas: "Empanadas",
   nav_contacto: "Contact",
@@ -633,7 +633,7 @@ const deTranslations: TranslationKeys = {
 
   //PAGE: Home.tsx
   nav_home: "Über uns",
-  nav_catering: "Catering",
+  nav_catering: "Delivery",
   nav_foodTruck: "Food Truck",
   nav_empanadas: "Empanadas",
   nav_contacto: "Kontakt",
@@ -824,7 +824,7 @@ const itTranslations: TranslationKeys = {
 
   //PAGE: Home.tsx
   nav_home: "Chi siamo",
-  nav_catering: "Catering",
+  nav_catering: "Delivery",
   nav_foodTruck: "Food Truck",
   nav_empanadas: "Empanadas",
   nav_contacto: "Contatti",

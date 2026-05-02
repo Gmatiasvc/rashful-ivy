@@ -18,12 +18,12 @@ import {
 import { Menu, X } from "lucide-react";
 
 const importHome = () => import("@/page/Home");
-const importCatering = () => import("./page/Catering");
+const importDelivery = () => import("./page/Delivery");
 const importEmpanadas = () => import("./page/Empanadas");
 const importFoodTruck = () => import("./page/FoodTruck");
 
 const Home = lazy(importHome);
-const Catering = lazy(importCatering);
+const Delivery = lazy(importDelivery);
 const Empanadas = lazy(importEmpanadas);
 const FoodTruck = lazy(importFoodTruck);
 import { BrowserRouter, Route, Routes, Link, NavLink, useLocation } from "react-router-dom";
@@ -212,7 +212,7 @@ const Navbar = ({ t, setLang, currentLang }: NavbarProps) => {
 
       <div className="hidden md:flex flex-row gap-8">
         <NavbarItem text={t.nav_home} hrf="/" onPrefetch={importHome} />
-        <NavbarItem text={t.nav_catering} hrf="/catering" onPrefetch={importCatering} />
+        <NavbarItem text={t.nav_catering} hrf="/delivery" onPrefetch={importDelivery} />
         <NavbarItem text={t.nav_foodTruck} hrf="/foodtruck" onPrefetch={importFoodTruck} />
         <NavbarItem text={t.nav_empanadas} hrf="/empanadas" onPrefetch={importEmpanadas} />
       </div>
@@ -242,9 +242,9 @@ const Navbar = ({ t, setLang, currentLang }: NavbarProps) => {
           />
           <NavbarItem
             text={t.nav_catering}
-            hrf="/catering"
+            hrf="/delivery"
             onClick={closeMobileMenu}
-            onPrefetch={importCatering}
+            onPrefetch={importDelivery}
           />
           <NavbarItem
             text={t.nav_foodTruck}
@@ -466,7 +466,7 @@ function App() {
         <div className="mt-16 md:mt-0">
           <Routes>
             <Route path="/" element={<Home t={t} />} />
-            <Route path="/catering" element={<Catering t={t} />} />
+            <Route path="/delivery" element={<Delivery t={t} />} />
             <Route path="/empanadas" element={<Empanadas t={t} />} />
             <Route path="/foodtruck" element={<FoodTruck t={t} />} />
           </Routes>
