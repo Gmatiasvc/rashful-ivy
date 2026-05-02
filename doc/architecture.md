@@ -4,7 +4,7 @@ This document details the architectural layout, core technical stack, directory 
 
 ## Overview
 
-The application is a single-page application (SPA) built with:
+The application is a single-page application (SPA) focused on enabling online delivery and reservations, built with:
 - **React 19**
 - **TypeScript**
 - **Vite**

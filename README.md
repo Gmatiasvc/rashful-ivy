@@ -1,6 +1,8 @@
-# Peruvian Restaurant Website
+# Rashful Ivy
 
 A React 19 single-page application built with TypeScript, Vite, and Tailwind CSS 4. This repository houses the frontend codebase for the restaurant's main website, featuring sections for catering, food truck details, empanadas, and a central landing page.
+
+The main objective of this application is to enable users to order online delivery or make a reservation.
 
 ## Quick Start
 
@@ -36,6 +38,7 @@ Detailed information regarding the system's architecture, design patterns, and i
 ## Agent Directives
 
 > **Notice for Coding Agents**:
+> The overarching objective of this project is to create a seamless experience for users to order online delivery and make reservations. Keep this in mind when making changes or suggesting improvements.
 > Any modifications, feature additions, or architectural shifts made to this project **must** be reflected in the relevant documentation.
 > - If you alter existing behavior, update the corresponding `.md` file in the `/doc` folder.
 > - If you introduce a new core system, create a new `.md` file in `/doc` and link to it from this `README.md`.

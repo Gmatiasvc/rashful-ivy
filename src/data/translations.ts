@@ -12,7 +12,7 @@ const esTranslations = {
   nav_contacto: "Contacto",
 
   hero_title: "La verdadera sazón peruana",
-  hero_name: ">> INKA CHOLA <<",
+  hero_name: ">> RASHFUL IVY <<",
   hero_desc: "Restaurante Peruano",
   hero_orderNow: "Pedir Ahora",
 
@@ -80,11 +80,11 @@ const esTranslations = {
   footer_reserve: "Reserva",
   footer_contact: "Contactanos",
   footer_number: "+41 76 449 35 42",
-  footer_email: "inkachola@gmx.ch",
+  footer_email: "rashfulivy@gmx.ch",
   footer_address1: "Untergasse 28",
   footer_address2: "2502 Biel-Bienne Suiza",
   footer_follow: "Síguenos",
-  footer_copy1: "© 2026 INKA CHOLA",
+  footer_copy1: "© 2026 RASHFUL IVY",
   footer_copy2: "Todos los derechos reservados",
   footer_credits_gv: "Diseñado por Gerardo Venegas",
   footer_credits_vp: " y Valentina Pajares",
@@ -208,7 +208,7 @@ const esTranslations = {
 
   // PAGE: FoodTruck.tsx
   ft_hero_title: "Food Truck",
-  ft_hero_desc: "El food truck de INKA CHOLA está en dos ubicaciones; consulta nuestra ruta y disfruta de nuestras empanadas peruanas.",
+  ft_hero_desc: "El food truck de RASHFUL IVY está en dos ubicaciones; consulta nuestra ruta y disfruta de nuestras empanadas peruanas.",
   ft_location_1_name: "WALSERPLATZ",
   ft_location_1_status: "... en pausa",
   ft_location_2_name: "ESPLANADE",
@@ -232,7 +232,7 @@ const enTranslations: TranslationKeys = {
   nav_contacto: "Contact",
 
   hero_title: "True Peruvian Flavor",
-  hero_name: ">> INKA CHOLA <<",
+  hero_name: ">> RASHFUL IVY <<",
   hero_desc: "Peruvian Restaurant",
   hero_orderNow: "Order Now",
 
@@ -300,11 +300,11 @@ const enTranslations: TranslationKeys = {
   footer_reserve: "Reservation",
   footer_contact: "Contact Us",
   footer_number: "+41 76 449 35 42",
-  footer_email: "inkachola@gmx.ch",
+  footer_email: "rashfulivy@gmx.ch",
   footer_address1: "Untergasse 28",
   footer_address2: "2502 Biel-Bienne Switzerland",
   footer_follow: "Follow Us",
-  footer_copy1: "© 2026 INKA CHOLA",
+  footer_copy1: "© 2026 RASHFUL IVY",
   footer_copy2: "All rights reserved",
   footer_credits_gv: "Designed by Gerardo Venegas",
   footer_credits_vp: " and Valentina Pajares",
@@ -427,7 +427,7 @@ const enTranslations: TranslationKeys = {
 
   // PAGE: FoodTruck.tsx
   ft_hero_title: "Food Truck",
-  ft_hero_desc: "INKA CHOLA's food truck is in two locations; check our route and enjoy our Peruvian empanadas.",
+  ft_hero_desc: "RASHFUL IVY's food truck is in two locations; check our route and enjoy our Peruvian empanadas.",
   ft_location_1_name: "WALSERPLATZ",
   ft_location_1_status: "... paused",
   ft_location_2_name: "ESPLANADE",
@@ -448,7 +448,7 @@ const frTranslations: TranslationKeys = {
   nav_contacto: "Contact",
 
   hero_title: "La véritable saveur péruvienne",
-  hero_name: ">> INKA CHOLA <<",
+  hero_name: ">> RASHFUL IVY <<",
   hero_desc: "Restaurant Péruvien",
   hero_orderNow: "Commander",
 
@@ -514,11 +514,11 @@ const frTranslations: TranslationKeys = {
   footer_reserve: "Réservation",
   footer_contact: "Contactez-nous",
   footer_number: "+41 76 449 35 42",
-  footer_email: "inkachola@gmx.ch",
+  footer_email: "rashfulivy@gmx.ch",
   footer_address1: "Untergasse 28",
   footer_address2: "2502 Biel-Bienne Suisse",
   footer_follow: "Suivez-nous",
-  footer_copy1: "© 2026 INKA CHOLA",
+  footer_copy1: "© 2026 RASHFUL IVY",
   footer_copy2: "Tous droits réservés",
   footer_credits_gv: "Conçu par Gerardo Venegas",
   footer_credits_vp: " et Valentina Pajares",
@@ -618,7 +618,7 @@ const frTranslations: TranslationKeys = {
 
   // PAGE: FoodTruck.tsx
   ft_hero_title: "Food Truck",
-  ft_hero_desc: "Le food truck INKA CHOLA est présent sur deux emplacements ; consultez notre itinéraire et profitez de nos empanadas péruviennes.",
+  ft_hero_desc: "Le food truck RASHFUL IVY est présent sur deux emplacements ; consultez notre itinéraire et profitez de nos empanadas péruviennes.",
   ft_location_1_name: "WALSERPLATZ",
   ft_location_1_status: "... en pause",
   ft_location_2_name: "ESPLANADE",
@@ -639,7 +639,7 @@ const deTranslations: TranslationKeys = {
   nav_contacto: "Kontakt",
 
   hero_title: "Der wahre peruanische Geschmack",
-  hero_name: ">> INKA CHOLA <<",
+  hero_name: ">> RASHFUL IVY <<",
   hero_desc: "Peruanisches Restaurant",
   hero_orderNow: "Jetzt bestellen",
 
@@ -705,11 +705,11 @@ const deTranslations: TranslationKeys = {
   footer_reserve: "Reservierung",
   footer_contact: "Kontaktiere uns",
   footer_number: "+41 76 449 35 42",
-  footer_email: "inkachola@gmx.ch",
+  footer_email: "rashfulivy@gmx.ch",
   footer_address1: "Untergasse 28",
   footer_address2: "2502 Biel-Bienne Schweiz",
   footer_follow: "Folgen Sie uns",
-  footer_copy1: "© 2026 INKA CHOLA",
+  footer_copy1: "© 2026 RASHFUL IVY",
   footer_copy2: "Alle Rechte vorbehalten",
   footer_credits_gv: "Entworfen von Gerardo Venegas",
   footer_credits_vp: " und Valentina Pajares",
@@ -809,7 +809,7 @@ const deTranslations: TranslationKeys = {
 
   // PAGE: FoodTruck.tsx
   ft_hero_title: "Food Truck",
-  ft_hero_desc: "Der Food Truck von INKA CHOLA befindet sich an zwei Standorten. Überprüfen Sie unsere Route und genießen Sie unsere peruanischen Empanadas.",
+  ft_hero_desc: "Der Food Truck von RASHFUL IVY befindet sich an zwei Standorten. Überprüfen Sie unsere Route und genießen Sie unsere peruanischen Empanadas.",
   ft_location_1_name: "WALSERPLATZ",
   ft_location_1_status: "... pausiert",
   ft_location_2_name: "ESPLANADE",
@@ -830,7 +830,7 @@ const itTranslations: TranslationKeys = {
   nav_contacto: "Contatti",
 
   hero_title: "Il vero sapore peruviano",
-  hero_name: ">> INKA CHOLA <<",
+  hero_name: ">> RASHFUL IVY <<",
   hero_desc: "Ristorante Peruviano",
   hero_orderNow: "Ordina Ora",
 
@@ -896,11 +896,11 @@ const itTranslations: TranslationKeys = {
   footer_reserve: "Prenotazione",
   footer_contact: "Contattaci",
   footer_number: "+41 76 449 35 42",
-  footer_email: "inkachola@gmx.ch",
+  footer_email: "rashfulivy@gmx.ch",
   footer_address1: "Untergasse 28",
   footer_address2: "2502 Biel-Bienne Svizzera",
   footer_follow: "Seguici",
-  footer_copy1: "© 2026 INKA CHOLA",
+  footer_copy1: "© 2026 RASHFUL IVY",
   footer_copy2: "Tutti i diritti riservati",
   footer_credits_gv: "Progettato da Gerardo Venegas",
   footer_credits_vp: " e Valentina Pajares",
@@ -1000,7 +1000,7 @@ const itTranslations: TranslationKeys = {
 
   // PAGE: FoodTruck.tsx
   ft_hero_title: "Food Truck",
-  ft_hero_desc: "Il food truck di INKA CHOLA si trova in due posizioni; controlla il nostro percorso e goditi le nostre empanadas peruviane.",
+  ft_hero_desc: "Il food truck di RASHFUL IVY si trova in due posizioni; controlla il nostro percorso e goditi le nostre empanadas peruviane.",
   ft_location_1_name: "WALSERPLATZ",
   ft_location_1_status: "... in pausa",
   ft_location_2_name: "ESPLANADE",
